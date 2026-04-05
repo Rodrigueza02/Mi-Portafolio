@@ -1,0 +1,540 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* F1 Theme - Red, Black, Gray */
+  --background: oklch(0.13 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.18 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.15 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.55 0.25 25);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.25 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.45 0.22 25);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.55 0.25 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.30 0 0);
+  --input: oklch(0.22 0 0);
+  --ring: oklch(0.55 0.25 25);
+  --chart-1: oklch(0.55 0.25 25);
+  --chart-2: oklch(0.65 0 0);
+  --chart-3: oklch(0.45 0 0);
+  --chart-4: oklch(0.35 0 0);
+  --chart-5: oklch(0.25 0 0);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.55 0.25 25);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.20 0 0);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.25 0 0);
+  --sidebar-ring: oklch(0.55 0.25 25);
+  
+  /* Custom F1 colors */
+  --f1-red: oklch(0.55 0.25 25);
+  --f1-red-dark: oklch(0.40 0.20 25);
+  --f1-red-light: oklch(0.65 0.25 25);
+  --f1-black: oklch(0.10 0 0);
+  --f1-gray: oklch(0.35 0 0);
+  --f1-gray-light: oklch(0.55 0 0);
+}
+
+.dark {
+  --background: oklch(0.10 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.15 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.55 0.25 25);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.22 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.20 0 0);
+  --muted-foreground: oklch(0.60 0 0);
+  --accent: oklch(0.45 0.22 25);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.55 0.25 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.28 0 0);
+  --input: oklch(0.20 0 0);
+  --ring: oklch(0.55 0.25 25);
+  --chart-1: oklch(0.55 0.25 25);
+  --chart-2: oklch(0.65 0 0);
+  --chart-3: oklch(0.45 0 0);
+  --chart-4: oklch(0.35 0 0);
+  --chart-5: oklch(0.25 0 0);
+  --sidebar: oklch(0.10 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.55 0.25 25);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.18 0 0);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.22 0 0);
+  --sidebar-ring: oklch(0.55 0.25 25);
+}
+
+@theme inline {
+  --font-sans: 'Rajdhani', 'Geist', 'Geist Fallback', sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --font-display: 'Orbitron', 'Rajdhani', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* F1 Custom Colors */
+  --color-f1-red: var(--f1-red);
+  --color-f1-red-dark: var(--f1-red-dark);
+  --color-f1-red-light: var(--f1-red-light);
+  --color-f1-black: var(--f1-black);
+  --color-f1-gray: var(--f1-gray);
+  --color-f1-gray-light: var(--f1-gray-light);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* F1 Custom Animations */
+@keyframes speed-lines {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(220, 38, 38, 0.6); }
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-speed-lines {
+  animation: speed-lines 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+/* Animated Racing Background - Intense Red Theme */
+@keyframes racing-bg {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floating-shapes {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  25% { transform: translateY(-15px) rotate(3deg) scale(1.05); }
+  50% { transform: translateY(-25px) rotate(-2deg) scale(1.1); }
+  75% { transform: translateY(-10px) rotate(1deg) scale(1.02); }
+}
+
+@keyframes diagonal-lines {
+  0% { transform: translateX(-100%) skewX(-20deg); }
+  100% { transform: translateX(200%) skewX(-20deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes smoke-drift {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0.3; }
+  33% { transform: translateX(50px) translateY(-20px) rotate(5deg); opacity: 0.5; }
+  66% { transform: translateX(-30px) translateY(-40px) rotate(-3deg); opacity: 0.4; }
+  100% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0.3; }
+}
+
+@keyframes highlight-blink {
+  0%, 100% { background-color: transparent; }
+  25% { background-color: rgba(220, 38, 38, 0.3); }
+  50% { background-color: transparent; }
+  75% { background-color: rgba(220, 38, 38, 0.3); }
+}
+
+.highlight-blink {
+  animation: highlight-blink 1.5s ease-in-out;
+}
+
+/* Fondo principal - Vinotinto/Burgundy con gradiente */
+.racing-gradient {
+  background: 
+    linear-gradient(180deg, 
+      #5c1a1a 0%,
+      #4a1515 15%,
+      #3d1212 30%,
+      #2d0e0e 50%,
+      #1f0a0a 70%,
+      #150707 85%,
+      #0a0303 100%
+    );
+  background-size: 100% 100%;
+  position: relative;
+}
+
+/* Versión más intensa para secciones destacadas */
+.racing-gradient-intense {
+  background: 
+    linear-gradient(180deg, 
+      #1a0a0a 0%,
+      #160808 25%,
+      #120606 50%,
+      #0d0404 75%,
+      #080202 100%
+    );
+}
+
+.gradient-red {
+  background: linear-gradient(135deg, #6b0d0d 0%, #5c1a1a 50%, #3d1212 100%);
+}
+
+/* Rayas de carrera diagonales visibles */
+.racing-stripes-bg {
+  position: relative;
+}
+
+.racing-stripes-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -35deg,
+    transparent,
+    transparent 40px,
+    rgba(139, 37, 37, 0.15) 40px,
+    rgba(139, 37, 37, 0.15) 80px,
+    transparent 80px,
+    transparent 120px,
+    rgba(92, 26, 26, 0.1) 120px,
+    rgba(92, 26, 26, 0.1) 160px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Rayas horizontales de velocidad */
+.speed-lines-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.02) 20%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.02) 80%, transparent 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 100px,
+      rgba(255,255,255,0.015) 100px,
+      rgba(255,255,255,0.015) 102px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Smoke/Texture overlay */
+.smoke-overlay {
+  position: relative;
+}
+
+.smoke-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 20% 30%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(185, 28, 28, 0.1) 0%, transparent 45%);
+  animation: smoke-drift 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.smoke-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 60% 20%, rgba(239, 68, 68, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 30% 80%, rgba(153, 27, 27, 0.12) 0%, transparent 50%);
+  animation: smoke-drift 15s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+/* Speed effect overlay */
+.speed-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.speed-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.speed-overlay:hover::before {
+  left: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(0.15 0 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(36.183% 0.13918 26.369);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(32.902% 0.11995 23.538);
+}
+
+/* Racing stripes animation */
+.racing-stripes {
+  position: relative;
+  overflow: hidden;
+}
+
+.racing-stripes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(220, 38, 38, 0.1),
+    transparent
+  );
+  animation: diagonal-lines 3s linear infinite;
+}
+
+/* Glowing orbs for background */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* Checkered flag pattern */
+.checkered-pattern {
+  background-image: 
+    linear-gradient(45deg, oklch(0.25 0 0) 25%, transparent 25%),
+    linear-gradient(-45deg, oklch(0.25 0 0) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, oklch(0.25 0 0) 75%),
+    linear-gradient(-45deg, transparent 75%, oklch(0.25 0 0) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Card hover lift effect */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+}
+
+/* Text glow effect */
+.text-glow {
+  text-shadow: 0 0 10px rgba(220, 38, 38, 0.5), 0 0 20px rgba(220, 38, 38, 0.3);
+}
+
+/* Button racing effect */
+.btn-racing {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-racing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-racing:hover::before {
+  left: 100%;
+}
+
+.btn-racing:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+}
+
+/* Diagonal speed stripes overlay */
+.speed-stripes-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.speed-stripes-overlay::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 30px,
+    rgba(220, 38, 38, 0.03) 30px,
+    rgba(220, 38, 38, 0.03) 60px
+  );
+  animation: diagonal-lines 25s linear infinite;
+  pointer-events: none;
+}
+
+/* Intense glow orbs */
+.glow-orb-intense {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: glow-pulse 6s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+/* Light streaks */
+@keyframes light-streak {
+  0% { transform: translateX(-100%) translateY(0); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translateX(200%) translateY(0); opacity: 0; }
+}
+
+.light-streak {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), rgba(220,38,38,0.8), rgba(255,255,255,0.6), transparent);
+  animation: light-streak 4s ease-in-out infinite;
+}
+
+/* Particle effect container */
+.particles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Vignette effect */
+.vignette {
+  position: relative;
+}
+
+.vignette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
