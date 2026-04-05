@@ -24,9 +24,9 @@ const habilidades = [
 
 // Datos de estudios
 const estudios = [
-  { year: "2020-2024", title: "Ingeniería en Software", institution: "Universidad Tecnológica" },
-  { year: "2023", title: "Especialización en UX/UI", institution: "Design Academy" },
-  { year: "2022", title: "Certificación Cloud", institution: "AWS Certified" },
+  { year: "2024-Presente", title: "Ingeniería en Software", institution: "Universidad Cooperativa de Colombia" },
+  { year: "2023-2024", title: "Tecnología en Desarrollo Multimedia y Web", institution: "SENA" },
+  { year: "2022", title: "Bachiller", institution: "Colegio Nuestra Señora del Carmen" },
 ]
 
 // Datos de objetivos
@@ -104,27 +104,23 @@ export default function AboutPage() {
               <div 
                 className={`relative aspect-[3/4] max-h-[500px] w-full overflow-hidden rounded-xl border border-border/50 transition-all backdrop-blur-sm ${activeSection === "sobre-mi" ? "ring-2 ring-primary" : ""}`}
               >
-                {/* Imagen placeholder con estilo racing */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-secondary to-card racing-stripes">
-                  {/* Silueta estilizada */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative">
-                      {/* Círculo de fondo */}
-                      <div className="h-48 w-48 rounded-full bg-gradient-to-br from-primary/50 to-transparent md:h-64 md:w-64 animate-pulse-glow" />
-                      {/* Líneas de velocidad */}
-                      <div className="absolute left-0 top-1/4 h-px w-32 bg-gradient-to-r from-primary to-transparent animate-speed-lines" />
-                      <div className="absolute left-0 top-1/2 h-px w-48 bg-gradient-to-r from-primary/60 to-transparent animate-speed-lines" style={{ animationDelay: "0.5s" }} />
-                      <div className="absolute left-0 top-3/4 h-px w-24 bg-gradient-to-r from-primary/30 to-transparent animate-speed-lines" style={{ animationDelay: "1s" }} />
-                    </div>
-                  </div>
-                </div>
-                
+<div className="absolute inset-0 bg-red-600">
+  {/* Imagen SIN recorte */}
+  <img
+    src="/images/miFoto.jpg"
+    alt="miFoto"
+    className="w-full h-full object-contain"
+  />
+
+  {/* Degradado oscuro para el texto */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+</div>
                 {/* Overlay con nombre */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/80 to-transparent p-6">
                   <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold uppercase tracking-wider text-foreground text-glow">
-                    Diseñador <span className="text-primary">Digital</span>
+                    Maria Juliana <span className="text-primary">Rodriguez Andrade</span>
                   </h2>
-                  <p className="mt-1 text-sm text-muted-foreground">Desarrollador & Creativo UI/UX</p>
+                  <p className="mt-1 text-sm text-muted-foreground">20 años | Pasto, Colombia</p>
                 </div>
               </div>
             </div>
@@ -143,24 +139,20 @@ export default function AboutPage() {
                 
                 <div className="mt-6 space-y-4 text-muted-foreground">
                   <p className="leading-relaxed">
-                    Soy un apasionado por la <span className="font-semibold text-primary">adrenalina</span> y 
-                    la velocidad en todo lo que hago. Desde pequeño, la creatividad y el diseño 
-                    capturaron mi imaginación y definieron mi forma de ver el mundo.
+                    Soy una persona que vive a toda <span className="font-semibold text-primary">velocidad</span> siempre curiosa y en movimiento. 
+                    Desde niña, la creatividad y el diseño me han acompañado, 
+                    moldeando mi manera de ver el mundo y mi forma de actuar: 
+                    con pasión, detalle y ganas de ir siempre un paso más allá.
                   </p>
                   <p className="leading-relaxed">
-                    Mi amor por las <span className="font-semibold text-primary">interfaces dinámicas</span> se traduce 
-                    en mi trabajo: busco la precisión milimétrica, la optimización constante 
-                    y el rendimiento máximo en cada proyecto.
+                    Me encanta desafiar mis <span className="font-semibold text-primary">propios límites</span> ,aprender 
+                    cosas nuevas cada día y encontrar la belleza en la precisión y el ritmo de la vida. 
+                    Para mí, la vida es dinámica: se trata de adaptarse, avanzar con energía 
+                    y disfrutar cada momento con intensidad.
                   </p>
                   <p className="leading-relaxed">
-                    La <span className="font-semibold text-primary">velocidad</span> no es solo llegar 
-                    primero, es la eficiencia, la elegancia en el movimiento, la capacidad 
-                    de adaptarse en fracciones de segundo.
-                  </p>
-                  <p className="leading-relaxed">
-                    Mi <span className="font-semibold text-primary">estilo de vida dinámico</span> me 
-                    impulsa a estar siempre en movimiento, aprendiendo, mejorando, 
-                    superando mis propios límites cada día.
+                    Creo en dejar <span className="font-semibold text-primary">huella</span> ,en aportar con entusiasmo 
+                    y en transformar cada experiencia en algo memorable.
                   </p>
                 </div>
               </div>

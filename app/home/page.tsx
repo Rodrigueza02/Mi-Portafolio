@@ -39,16 +39,16 @@ const homeContent = [
 const buttonContent = {
   software: {
     title: "Software & Herramientas",
-    text: "Domino tecnologías como React, Next.js, TypeScript, Node.js, Python y bases de datos SQL/NoSQL. Mi stack incluye herramientas de diseño como Figma, Adobe XD, y frameworks de CSS como Tailwind. También tengo experiencia en desarrollo móvil con React Native y Flutter."
+    text: "Domino tecnologías como Java, Python, TypeScript, SQL y HTML, y cuento con experiencia trabajando con herramientas y frameworks como React, Vite, Django y Unity. Además, aplico patrones de diseño y estructuras de datos para desarrollar soluciones organizadas, eficientes y escalables. Me enfoco en escribir código claro, mantenible y orientado a buenas prácticas de desarrollo. Me interesa especialmente la parte visual y gráfica del desarrollo, ya que disfruto crear interfaces atractivas y bien estructuradas."
   },
   estudios: {
     title: "Formación Académica",
-    text: "Estudiante de Ingeniería de Sistemas con enfoque en desarrollo de software y diseño de interfaces. He completado certificaciones en UX/UI Design, Desarrollo Web Full Stack y metodologías ágiles. Constantemente actualizando mis conocimientos a través de cursos especializados."
+    text: "Estudiante de quinto semestre de Ingeniería de Sistemas, con enfoque en desarrollo de software y gran interés en el diseño y la parte visual de las aplicaciones. Actualmente, me encuentro en la etapa final de un tecnólogo en Desarrollo Multimedia y Web. He fortalecido mis conocimientos a través de formación complementaria, incluyendo un curso de Programación Orientada a Objetos, y continúo en constante aprendizaje para mejorar mis habilidades técnicas y profesionales."
   },
   metas: {
     title: "Mis Objetivos",
-    text: "Mi meta principal es convertirme en un desarrollador senior especializado en interfaces de usuario innovadoras. Aspiro a trabajar en proyectos que combinen tecnología de punta con diseño excepcional, creando experiencias digitales que impacten positivamente a los usuarios."
-  }
+    text: "Mi meta principal es culminar mi carrera profesional y graduarme con honores, consolidando una base sólida en el desarrollo de software. A futuro, aspiro a continuar mi formación con una maestría enfocada en áreas como diseño, desarrollo de videojuegos o ciberseguridad, con el objetivo de especializarme y aportar soluciones innovadoras en el ámbito tecnológico."
+}
 }
 
 // =====================================================
@@ -215,9 +215,13 @@ export default function HomePage() {
                     Historia
                   </h2>
                   <p className="mt-2 leading-relaxed text-muted-foreground">
-                    Mi viaje comenzó con la pasión por la velocidad y la tecnología. 
-                    Desde entonces, he dedicado mi carrera a fusionar la adrenalina 
-                    con soluciones innovadoras en diseño de interfaces.
+                    Mi interés por la tecnología comenzó desde que descubrí mi gusto por el diseño, 
+                    la innovación y la creación de nuevas soluciones. 
+                    Actualmente, me encuentro cursando quinto semestre de Ingeniería de Software, 
+                    una carrera que elegí porque me permite materializar ideas a través de la programación.
+
+                    A lo largo de mi formación, he fortalecido habilidades que me permiten desarrollar soluciones tecnológicas, 
+                    combinando creatividad y lógica para aportar valor en cada proyecto.
                   </p>
                 </div>
 
@@ -330,7 +334,8 @@ export default function HomePage() {
                 </div>
                 
                 <p className="text-xs text-muted-foreground bg-card/50 rounded-md p-2">
-                  Mi Cancion Especial: <code className="text-primary">Esta cancion me genera amor y paz, me la dedico la persona mas importante en  mi vida, mi mamá</code>
+                  Mi Cancion Especial: <code className="text-primary">Esta cancion me genera amor y paz, 
+                    me la dedico la persona mas importante en  mi vida, mi mamá</code>
                 </p>
               </div>
             </div>
@@ -433,28 +438,68 @@ export default function HomePage() {
                   
                   {/* Texto expandible */}
                   <div>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      Desarrollador apasionado por el diseño de interfaces innovadoras.
-                      {expandedPresentation && (
-                        <span className="animate-fade-in-up">
-                          {" "}Mi enfoque combina precisión técnica con creatividad visual. 
-                          Me especializo en crear experiencias de usuario memorables que 
-                          destacan por su velocidad, fluidez y atención al detalle. 
-                          Creo en el poder del diseño para transformar ideas en realidades 
-                          digitales impactantes.
-                        </span>
-                      )}
-                    </p>
-                    <Button 
-                      variant="link" 
-                      onClick={() => setExpandedPresentation(!expandedPresentation)}
-                      className="mt-2 h-auto p-0 text-primary"
-                    >
-                      {expandedPresentation ? "Leer menos" : "Leer más"} 
-                      <ChevronRight className={`ml-1 h-4 w-4 transition-transform ${expandedPresentation ? "rotate-90" : ""}`} />
-                    </Button>
-                  </div>
+                  
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Desarrolladora en formación con enfoque en la construcción
+            de soluciones eficientes y bien organizadas, interesada
+            en seguir fortaleciendo tanto mis habilidades técnicas como creativas.
+          </p>
+
+          {expandedPresentation && (
+            <div className="mt-4 space-y-4 animate-fade-in-up text-sm text-muted-foreground">
+
+              <p>
+                Me adapto con facilidad a nuevos entornos de trabajo y herramientas, y disfruto enfrentar retos que me permitan crecer profesionalmente.
+              </p>
+
+              <p>
+                Mi trabajo se caracteriza por el compromiso, la buena comunicación y la capacidad de aportar ideas que mejoren los resultados, 
+                cualidades que han sido valoradas positivamente por compañeros y docentes en distintos proyectos.
+              </p>
+
+              <h3 className="text-red-500 font-semibold text-base mt-6">
+                Testimonios
+              </h3>
+
+              <div>
+                <h4 className="text-red-500 font-medium">Camilo Ojeda</h4>
+                <span className="text-xs text-gray-400">Cliente</span>
+                <p className="italic mt-1">
+                  "Trabajar con ella fue una experiencia muy profesional. Necesitábamos una página web moderna y funcional, y logró entregar justo lo que buscábamos. Destaco especialmente su capacidad para entender los requerimientos y proponer mejoras en la interfaz."
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-red-500 font-medium">Helen Moncayo</h4>
+                <span className="text-xs text-gray-400">Compañera de equipo</span>
+                <p className="italic mt-1">
+                  "Fue una pieza clave en el desarrollo del proyecto. Siempre aportó ideas claras y soluciones eficientes a los problemas técnicos."
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-red-500 font-medium">Daniel Arteaga</h4>
+                <span className="text-xs text-gray-400">Colega desarrollador</span>
+                <p className="italic mt-1">
+                  "Me impresionó la forma en que aborda los problemas de programación. Se preocupa por la calidad del código y la optimización."
+                </p>
+              </div>
+
                 </div>
+              )}
+
+              <Button 
+                variant="link" 
+                onClick={() => setExpandedPresentation(!expandedPresentation)}
+                className="mt-2 h-auto p-0 text-primary"
+              >
+                {expandedPresentation ? "Leer menos" : "Leer más"} 
+                <ChevronRight className={`ml-1 h-4 w-4 transition-transform ${expandedPresentation ? "rotate-90" : ""}`} />
+              </Button>
+            </div>
+
+                  </div>
+
 
                 {/* Botón de contacto con modal */}
                 <Button 
@@ -474,17 +519,17 @@ export default function HomePage() {
                       <div className="flex items-center gap-3 text-foreground">
                         <Mail className="h-5 w-5 text-primary" />
                         {/* PON TU CORREO AQUÍ */}
-                        <span>tucorreo@email.com</span>
+                        <span>mariaj.rodrigueza@campusucc.edu.co</span>
                       </div>
                       <div className="flex items-center gap-3 text-foreground">
                         <Phone className="h-5 w-5 text-primary" />
                         {/* PON TU TELÉFONO AQUÍ */}
-                        <span>+57 300 123 4567</span>
+                        <span>+57 3162837593</span>
                       </div>
                       <div className="flex items-center gap-3 text-foreground">
                         <MapPin className="h-5 w-5 text-primary" />
                         {/* PON TU UBICACIÓN AQUÍ */}
-                        <span>Tu Ciudad, País</span>
+                        <span>San Juan de Pasto, Colombia</span>
                       </div>
                     </div>
                   </div>
