@@ -108,33 +108,20 @@ export default function HomePage() {
     setActiveButton(activeButton === buttonId ? null : buttonId)
   }
 
-  const toggleAudio = useCallback(async () => {
-    if (!audioRef.current) return
+  const toggleAudio = () => {
+  if (!audioRef.current) return
 
-    if (isPlayingRef.current) {
-      if (playPromiseRef.current) {
-        try {
-          await playPromiseRef.current
-        } catch {
-          // Ignorar errores de promesas anteriores
-        }
-      }
-      audioRef.current.pause()
-      isPlayingRef.current = false
-      setIsPlaying(false)
-    } else {
-      try {
-        playPromiseRef.current = audioRef.current.play()
-        await playPromiseRef.current
-        isPlayingRef.current = true
-        setIsPlaying(true)
-      } catch (error) {
-        console.log("Error reproduciendo audio:", error)
-        isPlayingRef.current = false
-        setIsPlaying(false)
-      }
-    }
-  }, [])
+  if (isPlaying) {
+    audioRef.current.pause()
+    setIsPlaying(false)
+  } else {
+    audioRef.current.play()
+      .then(() => setIsPlaying(true))
+      .catch((error) => {
+        console.log("Error al reproducir:", error)
+      })
+  }
+}
 
   const submitComment = () => {
     if (comment.trim()) {
@@ -167,7 +154,7 @@ export default function HomePage() {
           Sube tu archivo MP3 a la carpeta /public/audio/
           ===================================================== */}
       <audio ref={audioRef} loop>
-        <source src="/audio/mi-cancion.mp3" type="audio/mpeg" />
+        <source src="/audio/MasqueAmor.mp3" type="audio/mpeg" />
       </audio>
 
       <Navbar 
@@ -319,8 +306,8 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div className="absolute bottom-2 left-2 right-2 bg-black/50 rounded p-1">
-                      <p className="text-xs text-foreground font-semibold truncate">Nombre de la Canción</p>
-                      <p className="text-xs text-muted-foreground truncate">Nombre del Artista</p>
+                      <p className="text-xs text-foreground font-semibold truncate">Mas que Amor</p>
+                      <p className="text-xs text-muted-foreground truncate">Herencia de Timbiqui</p>
                     </div>
                   </div>
                   
@@ -343,7 +330,7 @@ export default function HomePage() {
                 </div>
                 
                 <p className="text-xs text-muted-foreground bg-card/50 rounded-md p-2">
-                  Sube tu archivo MP3 a: <code className="text-primary">/public/audio/mi-cancion.mp3</code>
+                  Mi Cancion Especial: <code className="text-primary">Esta cancion me genera amor y paz, me la dedico la persona mas importante en  mi vida, mi mamá</code>
                 </p>
               </div>
             </div>

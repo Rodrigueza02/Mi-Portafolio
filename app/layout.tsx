@@ -17,7 +17,7 @@ const orbitron = Orbitron({
 
 export const metadata: Metadata = {
   title: 'Mi Portafolio | Velocidad y Pasión',
-  description: 'Portafolio personal de diseño de interfaces. Velocidad, adrenalina y diseño de alto rendimiento.',
+  description: 'Portafolio personal de Juliana Rodríguez, una apasionada desarrolladora web especializada en React, Vite y Tailwind CSS. Este sitio muestra mis proyectos más destacados, habilidades técnicas y experiencia profesional. Con un diseño moderno y dinámico, mi portafolio refleja mi compromiso con la excelencia y la innovación en el desarrollo web.',
   generator: 'v0.app',
   icons: {
     icon: [

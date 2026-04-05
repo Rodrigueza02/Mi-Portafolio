@@ -8,7 +8,6 @@ import { Footer } from "@/components/portfolio/footer"
 
 const sections = [
   { id: "intro", title: "Introducción", icon: Zap },
-  { id: "velocidad", title: "Velocidad", icon: Gauge },
   { id: "proyectos", title: "Proyectos", icon: Flag },
   { id: "logros", title: "Logros", icon: Trophy },
 ]
@@ -73,23 +72,25 @@ export default function InicioPage() {
               <div className="mt-4 h-1 w-24 bg-gradient-to-r from-primary to-primary/20" />
               
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                Bienvenido a mi mundo de creatividad y velocidad. Aquí encontrarás mis proyectos, 
-                experiencias y todo lo que me define como profesional del diseño de interfaces.
+                Aquí podrás conocer mi perfil como estudiante de Ingeniería de Software, 
+                así como mis proyectos, habilidades y experiencias en el desarrollo de 
+                soluciones tecnológicas.
               </p>
               
               <p className="mt-4 text-muted-foreground">
-                La adrenalina, la precisión técnica y el trabajo en equipo 
-                son los pilares que guían mi carrera profesional.
+                Este portafolio refleja mi compromiso con la precisión técnica, 
+                el aprendizaje continuo y el trabajo en equipo. Te invito a explorar cada sección 
+                para descubrir mi enfoque profesional y mi forma de trabajar.
               </p>
 
               {/* Estadísticas rápidas */}
               <div className="mt-8 grid grid-cols-3 gap-4">
                 <div className="text-center p-3 rounded-lg bg-primary/10 border border-primary/20">
-                  <span className="font-[family-name:var(--font-display)] text-2xl font-bold text-primary md:text-3xl">5+</span>
+                  <span className="font-[family-name:var(--font-display)] text-2xl font-bold text-primary md:text-3xl">1+</span>
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">Años Exp.</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-primary/10 border border-primary/20">
-                  <span className="font-[family-name:var(--font-display)] text-2xl font-bold text-primary md:text-3xl">20+</span>
+                  <span className="font-[family-name:var(--font-display)] text-2xl font-bold text-primary md:text-3xl">5+</span>
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">Proyectos</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-primary/10 border border-primary/20">
