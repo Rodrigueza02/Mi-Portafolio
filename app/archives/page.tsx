@@ -20,8 +20,7 @@ import { Footer } from "@/components/portfolio/footer"
 import { cn } from "@/lib/utils"
 
 // =====================================================
-// CONFIGURA TUS PROYECTOS AQUÍ
-// Agrega tantos proyectos como quieras
+// CONFIGURACION DE PROYECTOS
 // =====================================================
 const archivos = [
   {

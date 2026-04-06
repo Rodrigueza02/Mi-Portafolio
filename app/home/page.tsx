@@ -368,7 +368,7 @@ export default function HomePage() {
                     <div className="absolute left-0 top-3/4 h-px w-1/2 bg-gradient-to-r from-primary/20 to-transparent animate-speed-lines" style={{ animationDelay: "1s" }} />
                     
                     <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold uppercase tracking-wider text-foreground md:text-4xl text-glow">
-                      La <span className="text-primary">Velocidad</span> es mi Pasión
+                      La <span className="text-primary">Programacion</span> es mi Pasión
                     </h2>
                     <p className="mt-2 max-w-md text-muted-foreground">
                       Donde otros ven límites, yo veo oportunidades para innovar y crear experiencias únicas.
@@ -431,9 +431,9 @@ export default function HomePage() {
                 <div className="flex gap-4">
                   {/* Imagen pequeña - PON TU FOTO AQUÍ */}
                   <div className="h-24 w-24 shrink-0 overflow-hidden rounded-xl border-2 border-primary/30 bg-gradient-to-br from-red-600/40 to-red-900/30">
-                    {/* Reemplaza con tu imagen:
-                    <img src="/images/perfil.jpg" alt="Perfil" className="h-full w-full object-cover" />
-                    */}
+                    
+                    <img src="/images/miFoto.jpg" alt="Perfil" className="h-full w-full object-cover" />
+              
                   </div>
                   
                   {/* Texto expandible */}
