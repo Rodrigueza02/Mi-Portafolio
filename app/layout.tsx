@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Rajdhani, Orbitron } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ThemeProvider } from '@/contexts/theme-context'
+import { LanguageProvider } from '@/contexts/language-context'
 import './globals.css'
 
 const rajdhani = Rajdhani({ 
@@ -50,9 +52,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className="dark">
       <body className={`${rajdhani.variable} ${orbitron.variable} font-sans antialiased`}>
-        {children}
+        <ThemeProvider>
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
