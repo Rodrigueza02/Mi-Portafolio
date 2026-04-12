@@ -11,7 +11,7 @@ export default function InicioPage() {
   const { t } = useLanguage()
 
   return (
-    <div className="flex min-h-screen flex-col racing-gradient smoke-overlay speed-stripes-overlay vignette relative overflow-hidden">
+    <div className="flex min-h-screen flex-col racing-gradient smoke-overlay speed-stripes-overlay vignette relative overflow-hidden pt-14 md:pt-16">
       {/* Elementos decorativos animados */}
       <div className="glow-orb-intense absolute -left-48 top-1/4 h-96 w-96 bg-red-600/50" />
       <div className="glow-orb-intense absolute -right-48 bottom-1/4 h-80 w-80 bg-red-700/45" style={{ animationDelay: "2s" }} />
