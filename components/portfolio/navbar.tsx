@@ -115,13 +115,17 @@ export function Navbar() {
       {/* Menu mobile - Overlay */}
       <div
         className={cn(
-          "fixed inset-0 top-14 z-40 bg-background/98 backdrop-blur-lg md:hidden transition-all duration-300 ease-in-out",
+          "fixed inset-0 top-14 z-40 md:hidden transition-all duration-300 ease-in-out",
           isMenuOpen 
             ? "opacity-100 visible translate-y-0" 
             : "opacity-0 invisible -translate-y-4"
         )}
       >
-        <div className="flex flex-col h-full">
+        {/* Fondo con blur fuerte y color solido */}
+        <div className="absolute inset-0 bg-background/95 backdrop-blur-xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background" />
+        
+        <div className="relative flex flex-col h-full">
           {/* Links de navegacion mobile */}
           <nav className="flex flex-col px-6 py-6 gap-2">
             {navLinks.map((link, index) => (
@@ -132,8 +136,8 @@ export function Navbar() {
                 className={cn(
                   "flex items-center gap-3 rounded-xl px-4 py-4 text-lg font-medium uppercase tracking-wide transition-all",
                   pathname === link.href 
-                    ? "bg-primary/20 text-primary border border-primary/30" 
-                    : "text-foreground hover:bg-primary/10 hover:text-primary border border-transparent"
+                    ? "bg-primary/20 text-primary border border-primary/30 shadow-lg shadow-primary/10" 
+                    : "text-foreground hover:bg-primary/10 hover:text-primary border border-transparent bg-card/30"
                 )}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
@@ -150,7 +154,7 @@ export function Navbar() {
           {/* Info adicional */}
           <div className="px-6 py-6">
             <p className="text-sm text-muted-foreground text-center">
-              PP
+              Juliana Rodriguez - Portafolio Personal
             </p>
           </div>
         </div>
