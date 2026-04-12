@@ -83,6 +83,50 @@
   --sidebar-ring: oklch(0.55 0.25 25);
 }
 
+/* Light Theme - Cream/White with Pink accents */
+.light {
+  --background: oklch(0.97 0.01 60);
+  --foreground: oklch(0.20 0 0);
+  --card: oklch(0.99 0.005 60);
+  --card-foreground: oklch(0.20 0 0);
+  --popover: oklch(0.98 0.01 60);
+  --popover-foreground: oklch(0.20 0 0);
+  --primary: oklch(0.65 0.20 0);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.92 0.02 350);
+  --secondary-foreground: oklch(0.20 0 0);
+  --muted: oklch(0.90 0.01 60);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.75 0.15 350);
+  --accent-foreground: oklch(0.20 0 0);
+  --destructive: oklch(0.55 0.25 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.85 0.02 350);
+  --input: oklch(0.95 0.01 60);
+  --ring: oklch(0.65 0.20 0);
+  --chart-1: oklch(0.65 0.20 0);
+  --chart-2: oklch(0.70 0.15 350);
+  --chart-3: oklch(0.60 0.10 30);
+  --chart-4: oklch(0.55 0.05 60);
+  --chart-5: oklch(0.50 0.02 0);
+  --sidebar: oklch(0.96 0.01 60);
+  --sidebar-foreground: oklch(0.20 0 0);
+  --sidebar-primary: oklch(0.65 0.20 0);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.92 0.02 350);
+  --sidebar-accent-foreground: oklch(0.20 0 0);
+  --sidebar-border: oklch(0.88 0.02 350);
+  --sidebar-ring: oklch(0.65 0.20 0);
+  
+  /* Light theme custom colors */
+  --f1-red: oklch(0.65 0.20 0);
+  --f1-red-dark: oklch(0.55 0.18 0);
+  --f1-red-light: oklch(0.75 0.18 0);
+  --f1-black: oklch(0.20 0 0);
+  --f1-gray: oklch(0.55 0 0);
+  --f1-gray-light: oklch(0.75 0 0);
+}
+
 @theme inline {
   --font-sans: 'Rajdhani', 'Geist', 'Geist Fallback', sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
@@ -247,6 +291,20 @@
     );
   background-size: 100% 100%;
   position: relative;
+}
+
+/* Light mode racing gradient - cream/pink */
+.light .racing-gradient {
+  background: 
+    linear-gradient(180deg, 
+      #fdf6f3 0%,
+      #fef2f0 15%,
+      #fdeeed 30%,
+      #fce8e6 50%,
+      #fbe3e0 70%,
+      #f9deda 85%,
+      #f7d9d5 100%
+    );
 }
 
 /* Versión más intensa para secciones destacadas */
@@ -487,6 +545,20 @@
   filter: blur(100px);
   animation: glow-pulse 6s ease-in-out infinite;
   mix-blend-mode: screen;
+}
+
+.light .glow-orb-intense {
+  mix-blend-mode: multiply;
+  opacity: 0.3;
+}
+
+.light .smoke-overlay::before,
+.light .smoke-overlay::after {
+  opacity: 0.5;
+}
+
+.light .text-glow {
+  text-shadow: 0 0 10px rgba(220, 100, 100, 0.3), 0 0 20px rgba(220, 100, 100, 0.2);
 }
 
 /* Light streaks */
