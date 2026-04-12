@@ -112,52 +112,47 @@ export function Navbar() {
         </div>
       </nav>
 
-      {/* Menu mobile - Overlay */}
-      <div
-        className={cn(
-          "fixed inset-0 top-14 z-40 md:hidden transition-all duration-300 ease-in-out",
-          isMenuOpen 
-            ? "opacity-100 visible translate-y-0" 
-            : "opacity-0 invisible -translate-y-4"
-        )}
-      >
-        {/* Fondo completamente opaco - color negro solido */}
-        <div className="absolute inset-0 bg-[#0a0a0a]" />
-        
-        <div className="relative flex flex-col h-full">
-          {/* Links de navegacion mobile */}
-          <nav className="flex flex-col px-6 py-6 gap-3">
-            {navLinks.map((link, index) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={cn(
-                  "flex items-center gap-3 rounded-xl px-4 py-4 text-lg font-medium uppercase tracking-wide transition-all",
-                  pathname === link.href 
-                    ? "bg-primary/30 text-primary border border-primary/50 shadow-lg shadow-primary/20" 
-                    : "text-white hover:bg-primary/20 hover:text-primary border border-white/10 bg-white/5"
-                )}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <span className="font-[family-name:var(--font-display)]">
-                  {t(link.labelKey)}
-                </span>
-              </Link>
-            ))}
-          </nav>
+      {/* Menu mobile - Overlay con fondo solido oscuro */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 top-14 z-[100] md:hidden"
+          style={{ backgroundColor: '#050505' }}
+        >
+          <div className="flex flex-col h-full overflow-y-auto">
+            {/* Links de navegacion mobile */}
+            <nav className="flex flex-col px-6 py-6 gap-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={cn(
+                    "flex items-center gap-3 rounded-xl px-4 py-4 text-lg font-medium uppercase tracking-wide transition-all",
+                    pathname === link.href 
+                      ? "text-[#ff0033] border-2 border-[#ff0033]" 
+                      : "text-white border border-white/20 hover:border-[#ff0033]/50 hover:text-[#ff0033]"
+                  )}
+                  style={{ backgroundColor: pathname === link.href ? 'rgba(255,0,51,0.15)' : 'rgba(255,255,255,0.05)' }}
+                >
+                  <span className="font-[family-name:var(--font-display)]">
+                    {t(link.labelKey)}
+                  </span>
+                </Link>
+              ))}
+            </nav>
 
-          {/* Separador */}
-          <div className="mx-6 h-px bg-white/20" />
+            {/* Separador */}
+            <div className="mx-6 h-px" style={{ backgroundColor: 'rgba(255,255,255,0.2)' }} />
 
-          {/* Info adicional */}
-          <div className="px-6 py-6">
-            <p className="text-sm text-white/60 text-center">
-              Juliana Rodriguez - Portafolio Personal
-            </p>
+            {/* Info adicional */}
+            <div className="px-6 py-6">
+              <p className="text-sm text-center" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                Juliana Rodriguez - Portafolio Personal
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </header>
   )
 }
