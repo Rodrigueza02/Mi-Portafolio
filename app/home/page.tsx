@@ -111,7 +111,7 @@ export default function HomePage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col racing-gradient smoke-overlay speed-stripes-overlay vignette relative overflow-hidden">
+    <div className="flex min-h-screen flex-col racing-gradient smoke-overlay speed-stripes-overlay vignette relative overflow-hidden pt-14 md:pt-16">
       {/* Elementos decorativos de fondo */}
       <div className="glow-orb-intense absolute -left-40 top-1/4 h-80 w-80 bg-red-600/50" />
       <div className="glow-orb-intense absolute -right-40 top-2/3 h-96 w-96 bg-red-700/40" style={{ animationDelay: "2s" }} />
