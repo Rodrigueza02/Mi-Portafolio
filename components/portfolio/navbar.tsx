@@ -121,12 +121,12 @@ export function Navbar() {
             : "opacity-0 invisible -translate-y-4"
         )}
       >
-        {/* Fondo completamente opaco */}
-        <div className="absolute inset-0 bg-background" />
+        {/* Fondo completamente opaco - color negro solido */}
+        <div className="absolute inset-0 bg-[#0a0a0a]" />
         
         <div className="relative flex flex-col h-full">
           {/* Links de navegacion mobile */}
-          <nav className="flex flex-col px-6 py-6 gap-2">
+          <nav className="flex flex-col px-6 py-6 gap-3">
             {navLinks.map((link, index) => (
               <Link
                 key={link.href}
@@ -135,8 +135,8 @@ export function Navbar() {
                 className={cn(
                   "flex items-center gap-3 rounded-xl px-4 py-4 text-lg font-medium uppercase tracking-wide transition-all",
                   pathname === link.href 
-                    ? "bg-primary/20 text-primary border border-primary/30 shadow-lg shadow-primary/10" 
-                    : "text-foreground hover:bg-primary/10 hover:text-primary border border-border/30 bg-card/50"
+                    ? "bg-primary/30 text-primary border border-primary/50 shadow-lg shadow-primary/20" 
+                    : "text-white hover:bg-primary/20 hover:text-primary border border-white/10 bg-white/5"
                 )}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
@@ -148,11 +148,11 @@ export function Navbar() {
           </nav>
 
           {/* Separador */}
-          <div className="mx-6 h-px bg-border/50" />
+          <div className="mx-6 h-px bg-white/20" />
 
           {/* Info adicional */}
           <div className="px-6 py-6">
-            <p className="text-sm text-muted-foreground text-center">
+            <p className="text-sm text-white/60 text-center">
               Juliana Rodriguez - Portafolio Personal
             </p>
           </div>
