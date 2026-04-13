@@ -102,7 +102,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     </div>
                     <div>
                       <h3 className="text-sm md:text-base font-semibold text-foreground">{t("contact.email")}</h3>
-                      <p className="text-[10px] md:text-xs text-muted-foreground">Principal</p>
+                      <p className="text-[10px] md:text-xs text-muted-foreground">{t("contact.principal")}</p>
                     </div>
                   </div>
                   <a href={`mailto:${contactData.email}`} className="text-xs md:text-sm text-primary hover:underline break-all">
@@ -121,7 +121,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     </div>
                     <div>
                       <h3 className="text-sm md:text-base font-semibold text-foreground">{t("contact.phone")}</h3>
-                      <p className="text-[10px] md:text-xs text-muted-foreground">WhatsApp disponible</p>
+                      <p className="text-[10px] md:text-xs text-muted-foreground">{t("contact.whatsapp")}</p>
                     </div>
                   </div>
                   <a href={`tel:${contactData.phone.replace(/\s/g, "")}`} className="text-xs md:text-sm text-primary hover:underline">
@@ -137,7 +137,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     </div>
                     <div>
                       <h3 className="text-sm md:text-base font-semibold text-foreground">{t("contact.location")}</h3>
-                      <p className="text-[10px] md:text-xs text-muted-foreground">Colombia</p>
+                      <p className="text-[10px] md:text-xs text-muted-foreground">{t("contact.colombia")}</p>
                     </div>
                   </div>
                   <p className="text-xs md:text-sm text-muted-foreground">{contactData.location}</p>
@@ -183,36 +183,36 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <CheckCircle className="h-6 w-6 md:h-8 md:w-8 text-green-500" />
                   </div>
                   <h4 className="text-lg md:text-xl font-semibold text-foreground mb-2">{t("comments.success")}</h4>
-                  <p className="text-xs md:text-sm text-muted-foreground">Te respondere lo antes posible.</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">{t("contact.replyNote")}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
                   <div>
-                    <label className="text-xs md:text-sm font-medium text-foreground mb-1.5 md:mb-2 block">Nombre</label>
+                    <label className="text-xs md:text-sm font-medium text-foreground mb-1.5 md:mb-2 block">{t("contact.nameLabel")}</label>
                     <input
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Tu nombre"
+                      placeholder={t("contact.namePlaceholder")}
                       className="w-full rounded-lg border border-primary/30 bg-input px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base text-foreground outline-none focus:border-primary placeholder:text-muted-foreground transition-colors"
                       required
                     />
                   </div>
                   
                   <div>
-                    <label className="text-xs md:text-sm font-medium text-foreground mb-1.5 md:mb-2 block">Email</label>
+                    <label className="text-xs md:text-sm font-medium text-foreground mb-1.5 md:mb-2 block">{t("contact.emailLabel")}</label>
                     <input
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="tu@email.com"
+                      placeholder={t("contact.emailPlaceholder")}
                       className="w-full rounded-lg border border-primary/30 bg-input px-3 md:px-4 py-2.5 md:py-3 text-sm md:text-base text-foreground outline-none focus:border-primary placeholder:text-muted-foreground transition-colors"
                       required
                     />
                   </div>
                   
                   <div>
-                    <label className="text-xs md:text-sm font-medium text-foreground mb-1.5 md:mb-2 block">Mensaje</label>
+                    <label className="text-xs md:text-sm font-medium text-foreground mb-1.5 md:mb-2 block">{t("contact.messageLabel")}</label>
                     <textarea
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -233,13 +233,13 @@ const handleSubmit = async (e: React.FormEvent) => {
                     ) : (
                       <>
                         <Send className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                        Enviar Mensaje
+                        {t("contact.sendMessage")}
                       </>
                     )}
                   </Button>
                   
                   <p className="text-center text-[10px] md:text-xs text-muted-foreground">
-                    Los mensajes se envian a: {contactData.email}
+                    {t("contact.messagesTo")} {contactData.email}
                   </p>
                 </form>
               )}

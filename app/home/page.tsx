@@ -37,10 +37,10 @@ const homeContent = [
 
 // Imagenes de momentos
 const momentosImages = [
-  { id: 1, title: "Seminario", imageUrl: "/momentos/seminario.jpg", color: "from-red-600/40 to-red-900/20" },
-  { id: 2, title: "Clases de Programación", imageUrl: "/momentos/programacion.jpg", color: "from-red-700/30 to-red-950/20" },
-  { id: 3, title: "Compañeros de Estudio", imageUrl: "/momentos/companeros.jpg", color: "from-red-800/25 to-red-900/30" },
-  { id: 4, title: "Capacitación", imageUrl: "/momentos/capacitacion.jpg", color: "from-red-600/35 to-red-950/25" },
+  { id: 1, titleKey: "moments.seminar", imageUrl: "/momentos/seminario.jpg", color: "from-red-600/40 to-red-900/20" },
+  { id: 2, titleKey: "moments.programming", imageUrl: "/momentos/programacion.jpg", color: "from-red-700/30 to-red-950/20" },
+  { id: 3, titleKey: "moments.classmates", imageUrl: "/momentos/companeros.jpg", color: "from-red-800/25 to-red-900/30" },
+  { id: 4, titleKey: "moments.training", imageUrl: "/momentos/capacitacion.jpg", color: "from-red-600/35 to-red-950/25" },
 ]
 
 export default function HomePage() {
@@ -248,7 +248,7 @@ export default function HomePage() {
                     poster="/images/corazon.jpg"
                   >
                     <source src="/video/personal.mp4" type="video/mp4" />
-                    Tu navegador no soporta videos.
+                    {t("video.noSupport")}
                   </video>
                   
                   {/* Overlay con boton de play */}
@@ -428,17 +428,13 @@ export default function HomePage() {
                   className="group relative aspect-square overflow-hidden rounded-xl border border-primary/30 transition-all card-lift hover:border-primary/50"
                 >
                   {img.imageUrl ? (
-                    <img src={img.imageUrl} alt={img.title} className="h-full w-full object-cover" />
+                    <img src={img.imageUrl} alt={t(img.titleKey)} className="h-full w-full object-cover" />
                   ) : (
-                    <div className={`absolute inset-0 bg-gradient-to-br ${img.color}`}>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-foreground/20 text-xs">Tu imagen</span>
-                      </div>
-                    </div>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${img.color}`} />
                   )}
                   <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100">
                     <span className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-wide text-white">
-                      {img.title}
+                      {t(img.titleKey)}
                     </span>
                   </div>
                 </div>

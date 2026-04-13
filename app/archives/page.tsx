@@ -112,7 +112,7 @@ const filteredArchivos = archivos.filter(
     if (url) {
       window.open(url, "_blank")
     } else {
-      alert("Configura el link de GitHub en el codigo del proyecto")
+      alert(t("archives.configGithub"))
     }
   }
 
@@ -363,7 +363,7 @@ const filteredArchivos = archivos.filter(
                   </>
                 ) : (
                   <div className="flex h-48 md:h-64 items-center justify-center">
-                    <p className="text-sm md:text-base text-muted-foreground">Selecciona un proyecto</p>
+                    <p className="text-sm md:text-base text-muted-foreground">{t("archives.selectProject")}</p>
                   </div>
                 )}
               </div>

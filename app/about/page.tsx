@@ -51,17 +51,17 @@ const softwareSkills = [
   { 
     category: "skills.dataStructures", 
     icon: Layers,
-    items: ["Listas enlazadas", "Arboles", "Grafos", "Pilas", "Colas", "HashMap"]
+    items: ["skills.linkedLists", "skills.trees", "skills.graphs", "skills.stacks", "skills.queues", "HashMap"]
   },
   { 
     category: "skills.algorithms", 
     icon: Braces,
-    items: ["Ordenamiento", "Busqueda", "Recursion", "Programacion dinamica", "Backtracking"]
+    items: ["skills.sorting", "skills.searching", "skills.recursion", "skills.dynamicProg", "Backtracking"]
   },
   { 
     category: "skills.versionControl", 
     icon: GitBranch,
-    items: ["Git", "GitHub", "GitLab", "Branching", "Pull Requests", "CI/CD basico"]
+    items: ["Git", "GitHub", "GitLab", "Branching", "Pull Requests", "skills.cicd"]
   },
   { 
     category: "skills.databases", 
@@ -132,9 +132,9 @@ export default function AboutPage() {
                 {/* Overlay con nombre */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 md:p-6">
                   <h2 className="font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-wider text-white text-glow">
-                    Maria Juliana <span className="text-primary">Rodriguez Andrade</span>
+                    {t("about.name")} <span className="text-primary">{t("about.lastname")}</span>
                   </h2>
-                  <p className="mt-1 text-xs md:text-sm text-white/70">20 años | Pasto, Colombia</p>
+                  <p className="mt-1 text-xs md:text-sm text-white/70">{t("about.age")}</p>
                 </div>
               </div>
             </div>
@@ -233,7 +233,7 @@ export default function AboutPage() {
                                     key={item}
                                     className="rounded-full bg-primary/20 border border-primary/30 px-2 md:px-3 py-0.5 md:py-1 text-[10px] md:text-xs font-medium text-primary"
                                   >
-                                    {item}
+                                    {item.startsWith("skills.") ? t(item) : item}
                                   </span>
                                 ))}
                               </div>

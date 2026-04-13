@@ -10,14 +10,14 @@ import { useLanguage } from "@/contexts/language-context"
 
 // Datos de imagenes de la coleccion
 const collectionImages = [
-  { id: 1, title: "Proyecto Web", category: "Desarrollo", imageUrl: "/collection/web.jpg", color: "from-primary/40 to-secondary" },
-  { id: 2, title: "Diseño UI", category: "Diseño", imageUrl: "/collection/ui.jpg", color: "from-secondary to-muted" },
-  { id: 3, title: "App Móvil", category: "Desarrollo", imageUrl: "/collection/app.jpg", color: "from-muted to-primary/30" },
-  { id: 4, title: "Dashboard", category: "Diseño", imageUrl: "/collection/dashboard.jpg", color: "from-primary/30 to-secondary" },
-  { id: 5, title: "Trabajo en Equipo", category: "Eventos", imageUrl: "/collection/equipo.jpg", color: "from-secondary to-primary/20" },
-  { id: 6, title: "Hackathon", category: "Eventos", imageUrl: "/collection/hackathon.jpg", color: "from-primary/50 to-muted" },
-  { id: 7, title: "Prototipo", category: "Diseño", imageUrl: "/collection/prototipo.jpg", color: "from-muted to-secondary" },
-  { id: 8, title: "Entrega Final", category: "Eventos", imageUrl: "/collection/entrega.jpg", color: "from-secondary to-primary/40" },
+  { id: 1, titleKey: "collection.webProject", category: "Desarrollo", imageUrl: "/collection/web.jpg", color: "from-primary/40 to-secondary" },
+  { id: 2, titleKey: "collection.uiDesign", category: "Diseño", imageUrl: "/collection/ui.jpg", color: "from-secondary to-muted" },
+  { id: 3, titleKey: "collection.mobileApp", category: "Desarrollo", imageUrl: "/collection/app.jpg", color: "from-muted to-primary/30" },
+  { id: 4, titleKey: "collection.dashboard", category: "Diseño", imageUrl: "/collection/dashboard.jpg", color: "from-primary/30 to-secondary" },
+  { id: 5, titleKey: "collection.teamwork", category: "Eventos", imageUrl: "/collection/equipo.jpg", color: "from-secondary to-primary/20" },
+  { id: 6, titleKey: "collection.hackathon", category: "Eventos", imageUrl: "/collection/hackathon.jpg", color: "from-primary/50 to-muted" },
+  { id: 7, titleKey: "collection.prototype", category: "Diseño", imageUrl: "/collection/prototipo.jpg", color: "from-muted to-secondary" },
+  { id: 8, titleKey: "collection.finalDelivery", category: "Eventos", imageUrl: "/collection/entrega.jpg", color: "from-secondary to-primary/40" },
 ]
 
 export default function CollectionPage() {
@@ -129,7 +129,7 @@ export default function CollectionPage() {
                     {image.imageUrl && (
                     <img
                       src={image.imageUrl}
-                      alt={image.title}
+                      alt={t(image.titleKey)}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   )}
@@ -142,7 +142,7 @@ export default function CollectionPage() {
                     {/* Overlay para mobile - siempre visible con info basica */}
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-2 md:hidden">
                       <h3 className="text-center font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-wide text-white truncate">
-                        {image.title}
+                        {t(image.titleKey)}
                       </h3>
                     </div>
 
@@ -158,7 +158,7 @@ export default function CollectionPage() {
                       </div>
                       
                       <h3 className="text-center font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-wide text-foreground px-2">
-                        {image.title}
+                        {t(image.titleKey)}
                       </h3>
                       <span className="mt-1 text-xs text-muted-foreground">
                         {image.category === "Desarrollo" ? t("collection.development") : 
@@ -228,7 +228,7 @@ export default function CollectionPage() {
   {selectedImage.imageUrl && (
     <img
       src={selectedImage.imageUrl}
-      alt={selectedImage.title}
+      alt={t(selectedImage.titleKey)}
       className="max-w-full max-h-[80vh] object-contain"
     />
   )}
@@ -246,7 +246,7 @@ export default function CollectionPage() {
 
             <div className="mt-4 md:mt-6 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-lg md:text-2xl font-bold uppercase tracking-wider text-foreground text-glow">
-                {selectedImage.title}
+                {t(selectedImage.titleKey)}
               </h2>
               <p className="mt-1 md:mt-2 text-sm md:text-base text-muted-foreground">
                 {t("collection.category")} <span className="font-medium text-primary">

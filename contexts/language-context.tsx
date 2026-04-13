@@ -186,6 +186,59 @@ export const translations: Translations = {
 "projects.select": { es: "Selecciona un proyecto", en: "Select a project" },
 "projects.github": { es: "Ver en GitHub", en: "View on GitHub" },
 
+  // Momentos
+  "moments.seminar": { es: "Seminario", en: "Seminar" },
+  "moments.programming": { es: "Clases de Programación", en: "Programming Classes" },
+  "moments.classmates": { es: "Compañeros de Estudio", en: "Study Partners" },
+  "moments.training": { es: "Capacitación", en: "Training" },
+
+  // Contacto - etiquetas formulario
+  "contact.principal": { es: "Principal", en: "Main" },
+  "contact.whatsapp": { es: "WhatsApp disponible", en: "WhatsApp available" },
+  "contact.colombia": { es: "Colombia", en: "Colombia" },
+  "contact.replyNote": { es: "Te responderé lo antes posible.", en: "I will reply as soon as possible." },
+  "contact.sendMessage": { es: "Enviar Mensaje", en: "Send Message" },
+  "contact.messagesTo": { es: "Los mensajes se envían a:", en: "Messages are sent to:" },
+  "contact.nameLabel": { es: "Nombre", en: "Name" },
+  "contact.namePlaceholder": { es: "Tu nombre", en: "Your name" },
+  "contact.emailLabel": { es: "Email", en: "Email" },
+  "contact.emailPlaceholder": { es: "tu@email.com", en: "your@email.com" },
+  "contact.messageLabel": { es: "Mensaje", en: "Message" },
+
+  // Video
+  "video.noSupport": { es: "Tu navegador no soporta videos.", en: "Your browser does not support videos." },
+
+  // Habilidades items
+  "skills.linkedLists": { es: "Listas enlazadas", en: "Linked lists" },
+  "skills.trees": { es: "Árboles", en: "Trees" },
+  "skills.graphs": { es: "Grafos", en: "Graphs" },
+  "skills.stacks": { es: "Pilas", en: "Stacks" },
+  "skills.queues": { es: "Colas", en: "Queues" },
+  "skills.sorting": { es: "Ordenamiento", en: "Sorting" },
+  "skills.searching": { es: "Búsqueda", en: "Searching" },
+  "skills.recursion": { es: "Recursión", en: "Recursion" },
+  "skills.dynamicProg": { es: "Programación dinámica", en: "Dynamic programming" },
+  "skills.cicd": { es: "CI/CD básico", en: "Basic CI/CD" },
+
+  // Archives
+  "archives.configGithub": { es: "Configura el link de GitHub en el código del proyecto", en: "Configure the GitHub link in the project code" },
+  "archives.selectProject": { es: "Selecciona un proyecto", en: "Select a project" },
+
+  // Colección - títulos imágenes
+  "collection.webProject": { es: "Proyecto Web", en: "Web Project" },
+  "collection.uiDesign": { es: "Diseño UI", en: "UI Design" },
+  "collection.mobileApp": { es: "App Móvil", en: "Mobile App" },
+  "collection.dashboard": { es: "Dashboard", en: "Dashboard" },
+  "collection.teamwork": { es: "Trabajo en Equipo", en: "Teamwork" },
+  "collection.hackathon": { es: "Hackathon", en: "Hackathon" },
+  "collection.prototype": { es: "Prototipo", en: "Prototype" },
+  "collection.finalDelivery": { es: "Entrega Final", en: "Final Delivery" },
+
+  // About - nombre y datos
+  "about.age": { es: "20 años | Pasto, Colombia", en: "20 years old | Pasto, Colombia" },
+  "about.name": { es: "Maria Juliana", en: "Maria Juliana" },
+  "about.lastname": { es: "Rodriguez Andrade", en: "Rodriguez Andrade" },
+
 }
 
 
