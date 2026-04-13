@@ -92,7 +92,7 @@ export const translations: Translations = {
   "moments.title": { es: "Momentos", en: "Moments" },
   
   // Comentarios
-  "comments.title": { es: "Deja tu comentario", en: "Leave your comment" },
+  "comments.title": { es: "Contactame", en: "Contact Me" },
   "comments.placeholder": { es: "Escribe tu comentario...", en: "Write your comment..." },
   "comments.success": { es: "Comentario enviado con éxito", en: "Comment sent successfully" },
   "comments.sending": { es: "Enviando...", en: "Sending..." },
