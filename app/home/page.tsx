@@ -359,9 +359,7 @@ export default function HomePage() {
                       </div>
                     )}
                     
-                    <p className="mt-3 text-xs text-muted-foreground">
-                      {t("comments.placeholder")}
-                    </p>
+
                   </div>
                 )}
               </div>
