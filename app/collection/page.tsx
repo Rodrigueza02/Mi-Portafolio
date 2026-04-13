@@ -10,14 +10,14 @@ import { useLanguage } from "@/contexts/language-context"
 
 // Datos de imagenes de la coleccion
 const collectionImages = [
-  { id: 1, title: "Proyecto Web", category: "Desarrollo", color: "from-primary/40 to-secondary" },
-  { id: 2, title: "Diseno UI", category: "Diseno", color: "from-secondary to-muted" },
-  { id: 3, title: "App Movil", category: "Desarrollo", color: "from-muted to-primary/30" },
-  { id: 4, title: "Dashboard", category: "Diseno", color: "from-primary/30 to-secondary" },
-  { id: 5, title: "Trabajo en Equipo", category: "Eventos", color: "from-secondary to-primary/20" },
-  { id: 6, title: "Hackathon", category: "Eventos", color: "from-primary/50 to-muted" },
-  { id: 7, title: "Prototipo", category: "Diseno", color: "from-muted to-secondary" },
-  { id: 8, title: "Entrega Final", category: "Eventos", color: "from-secondary to-primary/40" },
+  { id: 1, title: "Proyecto Web", category: "Desarrollo", imageUrl: "/collection/web.jpg", color: "from-primary/40 to-secondary" },
+  { id: 2, title: "Diseno UI", category: "Diseno", imageUrl: "/collection/ui.jpg", color: "from-secondary to-muted" },
+  { id: 3, title: "App Movil", category: "Desarrollo", imageUrl: "/collection/app.jpg", color: "from-muted to-primary/30" },
+  { id: 4, title: "Dashboard", category: "Diseno", imageUrl: "/collection/dashboard.jpg", color: "from-primary/30 to-secondary" },
+  { id: 5, title: "Trabajo en Equipo", category: "Eventos", imageUrl: "/collection/equipo.jpg", color: "from-secondary to-primary/20" },
+  { id: 6, title: "Hackathon", category: "Eventos", imageUrl: "/collection/hackathon.jpg", color: "from-primary/50 to-muted" },
+  { id: 7, title: "Prototipo", category: "Diseno", imageUrl: "/collection/prototipo.jpg", color: "from-muted to-secondary" },
+  { id: 8, title: "Entrega Final", category: "Eventos", imageUrl: "/collection/entrega.jpg", color: "from-secondary to-primary/40" },
 ]
 
 export default function CollectionPage() {
@@ -126,6 +126,13 @@ export default function CollectionPage() {
                       hoveredImage === image.id && "scale-[1.02] md:scale-[1.05] shadow-xl shadow-primary/30 border-primary/50"
                     )}
                   >
+                    {image.imageUrl && (
+                    <img
+                      src={image.imageUrl}
+                      alt={image.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  )}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold text-foreground/5">
                         {String(image.id).padStart(2, "0")}
@@ -211,21 +218,31 @@ export default function CollectionPage() {
             className="w-full max-w-4xl relative z-10 mx-8 md:mx-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <div 
-              className={cn(
-                "aspect-[4/3] md:aspect-video w-full overflow-hidden rounded-xl md:rounded-2xl border border-border/50 bg-gradient-to-br shadow-2xl racing-stripes",
-                selectedImage.color
-              )}
-            >
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center">
-                  <ZoomIn className="mx-auto h-10 w-10 md:h-16 md:w-16 text-foreground/20" />
-                  <span className="mt-2 md:mt-4 block font-[family-name:var(--font-display)] text-6xl md:text-9xl font-bold text-foreground/10">
-                    {String(selectedImage.id).padStart(2, "0")}
-                  </span>
-                </div>
-              </div>
-            </div>
+<div 
+  className={cn(
+    "relative aspect-[4/3] md:aspect-video w-full overflow-hidden rounded-xl md:rounded-2xl border border-border/50 bg-gradient-to-br shadow-2xl racing-stripes",
+    selectedImage.color
+  )}
+>
+  {/* IMAGEN */}
+  {selectedImage.imageUrl && (
+    <img
+      src={selectedImage.imageUrl}
+      alt={selectedImage.title}
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+  )}
+
+  {/* OVERLAY (opcional) */}
+  <div className="absolute inset-0 flex items-center justify-center">
+    <div className="text-center">
+      <ZoomIn className="mx-auto h-10 w-10 md:h-16 md:w-16 text-white/70" />
+      <span className="mt-2 block text-6xl md:text-9xl font-bold text-white/20">
+        {String(selectedImage.id).padStart(2, "0")}
+      </span>
+    </div>
+  </div>
+</div>
 
             <div className="mt-4 md:mt-6 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-lg md:text-2xl font-bold uppercase tracking-wider text-foreground text-glow">

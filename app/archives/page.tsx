@@ -74,22 +74,6 @@ const archivos = [
     ],
     color: "from-red-800/30 to-red-950/30",
   },
-  {
-    id: 4,
-    nombre: "Proyecto 04",
-    titulo: "Portal de Noticias Tech",
-    descripcion: "Plataforma de noticias del mundo tecnologico con actualizaciones en vivo, sistema de suscripciones y calendario de eventos.",
-    tecnologias: ["Next.js", "Supabase", "Tailwind CSS"],
-    fecha: "2023",
-    githubUrl: "",
-    imagenUrl: "",
-    archivosProyecto: [
-      { nombre: "page.tsx", tipo: "componente" },
-      { nombre: "NewsCard.tsx", tipo: "componente" },
-      { nombre: "lib/supabase.ts", tipo: "api" },
-    ],
-    color: "from-red-600/30 to-red-900/25",
-  },
 ]
 
 export default function ArchivesPage() {
@@ -172,7 +156,6 @@ export default function ArchivesPage() {
             <div className="space-y-3 md:space-y-4">
               <div className="flex items-center justify-between gap-2">
                 <h2 className="font-[family-name:var(--font-display)] text-sm md:text-lg font-semibold uppercase tracking-wide text-muted-foreground">
-                  {t("projects.list")}
                 </h2>
                 <button
                   onClick={() => setExpandedList(!expandedList)}

@@ -79,9 +79,9 @@ const testimonios = [
     avatar: "/placeholder-user.jpg"
   },
   {
-    name: "Helen Moncayo",
+    name: "Ana Gomez",
     roleKey: "testimonial.teammate",
-    textKey: "testimonial.helen",
+    textKey: "testimonial.ana",
     avatar: "/placeholder-user.jpg"
   },
   {
@@ -121,7 +121,7 @@ export default function AboutPage() {
             {/* Lado izquierdo - Imagen personal */}
             <div className="flex flex-col">
               <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[400px] md:max-h-[500px] w-full overflow-hidden rounded-lg md:rounded-xl border border-border/50 transition-all backdrop-blur-sm">
-                <div className="absolute inset-0 bg-red-600">
+                <div className="absolute inset-0 bg-rose-100 dark:bg-red-600">
                   <img
                     src="/images/miFoto.jpg"
                     alt="miFoto"

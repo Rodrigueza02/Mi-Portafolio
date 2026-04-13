@@ -74,7 +74,7 @@ export const translations: Translations = {
   "testimonial.teammate": { es: "Compañera de equipo", en: "Teammate" },
   "testimonial.colleague": { es: "Colega desarrollador", en: "Developer colleague" },
   "testimonial.camilo": { es: "Trabajar con ella fue una experiencia muy profesional. Necesitábamos una página web moderna y funcional, y logró entregar justo lo que buscábamos. Destaco especialmente su capacidad para entender los requerimientos y proponer mejoras en la interfaz.", en: "Working with her was a very professional experience. We needed a modern and functional website, and she delivered exactly what we were looking for. I especially highlight her ability to understand requirements and propose interface improvements." },
-  "testimonial.helen": { es: "Fue una pieza clave en el desarrollo del proyecto. Siempre aportó ideas claras y soluciones eficientes a los problemas técnicos.", en: "She was a key piece in the project development. She always contributed clear ideas and efficient solutions to technical problems." },
+  "testimonial.ana": { es: "Fue una pieza clave en el desarrollo del proyecto. Siempre aportó ideas claras y soluciones eficientes a los problemas técnicos.", en: "She was a key piece in the project development. She always contributed clear ideas and efficient solutions to technical problems." },
   "testimonial.daniel": { es: "Me impresionó la forma en que aborda los problemas de programación. Se preocupa por la calidad del código y la optimización.", en: "I was impressed by the way she approaches programming problems. She cares about code quality and optimization." },
   
   // Sección canción / video
@@ -141,7 +141,6 @@ export const translations: Translations = {
   
   // Proyectos
   "projects.title": { es: "Mis Proyectos", en: "My Projects" },
-  "projects.list": { es: "Lista de Proyectos", en: "Project List" },
   "projects.viewList": { es: "Ver Lista", en: "View List" },
   "projects.selectProject": { es: "Selecciona un proyecto:", en: "Select a project:" },
   "projects.preview": { es: "Vista Previa", en: "Preview" },

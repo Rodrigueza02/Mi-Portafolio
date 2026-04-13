@@ -25,7 +25,7 @@ import { useLanguage } from "@/contexts/language-context"
 
 // Datos de contenido para busqueda
 const homeContent = [
-  { id: "bienvenida", section: "Bienvenida", text: "Bienvenido a mi portafolio" },
+  { id: "bienvenida", section: "Bienvenida", text: "Bienvenido" },
   { id: "historia", section: "Historia", text: "Mi trayectoria profesional" },
   { id: "software", section: "Software", text: "Herramientas y tecnologias" },
   { id: "estudios", section: "Estudios", text: "Formacion academica" },
@@ -270,9 +270,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 
-                <p className="text-xs text-muted-foreground bg-card/50 rounded-md p-2">
-                  
-                </p>
+                
               </div>
             </div>
           </div>
