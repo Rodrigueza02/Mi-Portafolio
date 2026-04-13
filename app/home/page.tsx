@@ -240,7 +240,6 @@ export default function HomePage() {
                     ref={videoRef}
                     className="h-full w-full object-contain"
                     poster="/images/miFoto.jpg"
-                    controls
                   >
                     <source src="/video/personal.mp4" type="video/mp4" />
                     Tu navegador no soporta videos.
