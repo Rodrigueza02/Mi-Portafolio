@@ -11,12 +11,12 @@ import { useLanguage } from "@/contexts/language-context"
 // Datos de imagenes de la coleccion
 const collectionImages = [
   { id: 1, title: "Proyecto Web", category: "Desarrollo", imageUrl: "/collection/web.jpg", color: "from-primary/40 to-secondary" },
-  { id: 2, title: "Diseno UI", category: "Diseno", imageUrl: "/collection/ui.jpg", color: "from-secondary to-muted" },
-  { id: 3, title: "App Movil", category: "Desarrollo", imageUrl: "/collection/app.jpg", color: "from-muted to-primary/30" },
-  { id: 4, title: "Dashboard", category: "Diseno", imageUrl: "/collection/dashboard.jpg", color: "from-primary/30 to-secondary" },
+  { id: 2, title: "Diseño UI", category: "Diseño", imageUrl: "/collection/ui.jpg", color: "from-secondary to-muted" },
+  { id: 3, title: "App Móvil", category: "Desarrollo", imageUrl: "/collection/app.jpg", color: "from-muted to-primary/30" },
+  { id: 4, title: "Dashboard", category: "Diseño", imageUrl: "/collection/dashboard.jpg", color: "from-primary/30 to-secondary" },
   { id: 5, title: "Trabajo en Equipo", category: "Eventos", imageUrl: "/collection/equipo.jpg", color: "from-secondary to-primary/20" },
   { id: 6, title: "Hackathon", category: "Eventos", imageUrl: "/collection/hackathon.jpg", color: "from-primary/50 to-muted" },
-  { id: 7, title: "Prototipo", category: "Diseno", imageUrl: "/collection/prototipo.jpg", color: "from-muted to-secondary" },
+  { id: 7, title: "Prototipo", category: "Diseño", imageUrl: "/collection/prototipo.jpg", color: "from-muted to-secondary" },
   { id: 8, title: "Entrega Final", category: "Eventos", imageUrl: "/collection/entrega.jpg", color: "from-secondary to-primary/40" },
 ]
 
@@ -87,7 +87,7 @@ export default function CollectionPage() {
             >
               {t("collection.all")}
             </Button>
-            {["Desarrollo", "Diseno", "Eventos"].map((cat) => (
+            {["Desarrollo", "Diseño", "Eventos"].map((cat) => (
               <Button
                 key={cat}
                 variant={filterCategory === cat ? "default" : "outline"}
@@ -99,7 +99,7 @@ export default function CollectionPage() {
                 )}
               >
                 {cat === "Desarrollo" ? t("collection.development") : 
-                 cat === "Diseno" ? t("collection.design") : t("collection.events")}
+                 cat === "Diseño" ? t("collection.design") : t("collection.events")}
               </Button>
             ))}
           </div>
@@ -162,7 +162,7 @@ export default function CollectionPage() {
                       </h3>
                       <span className="mt-1 text-xs text-muted-foreground">
                         {image.category === "Desarrollo" ? t("collection.development") : 
-                         image.category === "Diseno" ? t("collection.design") : t("collection.events")}
+                         image.category === "Diseño" ? t("collection.design") : t("collection.events")}
                       </span>
                     </div>
                   </div>
@@ -251,7 +251,7 @@ export default function CollectionPage() {
               <p className="mt-1 md:mt-2 text-sm md:text-base text-muted-foreground">
                 {t("collection.category")} <span className="font-medium text-primary">
                   {selectedImage.category === "Desarrollo" ? t("collection.development") : 
-                   selectedImage.category === "Diseno" ? t("collection.design") : t("collection.events")}
+                   selectedImage.category === "Diseño" ? t("collection.design") : t("collection.events")}
                 </span>
               </p>
             </div>

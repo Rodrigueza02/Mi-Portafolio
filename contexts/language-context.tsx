@@ -180,8 +180,8 @@ export const translations: Translations = {
 "projects.project2.desc": { es: "Aplicacion web interactiva que funciona como reproductor de musica conectado a la API de Spotify.", en: "Interactive web application that works as a music player connected to the Spotify API." },
 
 "projects.project3.name": { es: "Proyecto 03", en: "Project 03" },
-"projects.project3.title": { es: "Pagina de Diseno de Interfaces para Aplicaciones Web", en: "Web Interface Design Page" },
-"projects.project3.desc": { es: "Proyecto academico que explora los fundamentos del diseno UI/UX.", en: "Academic project that explores UI/UX design fundamentals." },
+"projects.project3.title": { es: "Página de Diseño de Interfaces para Aplicaciones Web", en: "Web Interface Design Page" },
+"projects.project3.desc": { es: "Proyecto académico que explora los fundamentos del diseño UI/UX.", en: "Academic project that explores UI/UX design fundamentals." },
 
 "projects.select": { es: "Selecciona un proyecto", en: "Select a project" },
 "projects.github": { es: "Ver en GitHub", en: "View on GitHub" },

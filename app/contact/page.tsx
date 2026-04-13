@@ -14,7 +14,7 @@ const contactData = {
   emailSecondary: "mariaj.rodrigueza@campusucc.edu.co",
   phone: "+57 316 283 7593",
   phoneSecondary: "+57 300 000 0000",
-  location: "San Juan de Pasto, Narino, Colombia",
+  location: "San Juan de Pasto, Nariño, Colombia",
   socialMedia: [
     { name: "GitHub", icon: Github, url: "https://github.com/Rodrigueza02", username: "@Rodrigueza02" },
     { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/juliana-rodriguez-3514282b1/", username: "Juliana Rodriguez" },

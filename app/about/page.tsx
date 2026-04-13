@@ -26,7 +26,7 @@ import { useLanguage } from "@/contexts/language-context"
 const estudios = [
   { year: "2024-Presente", titleKey: "education.current", institution: "Universidad Cooperativa de Colombia" },
   { year: "2023-2024", titleKey: "education.tech", institution: "SENA" },
-  { year: "2022", titleKey: "education.highschool", institution: "Colegio Nuestra Senora del Carmen" },
+  { year: "2022", titleKey: "education.highschool", institution: "Colegio Nuestra Señora del Carmen" },
 ]
 
 // Datos de objetivos
@@ -131,10 +131,10 @@ export default function AboutPage() {
                 </div>
                 {/* Overlay con nombre */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/80 to-transparent p-4 md:p-6">
-                  <h2 className="font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-wider text-foreground text-glow">
+                  <h2 className="font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-wider text-white text-glow">
                     Maria Juliana <span className="text-primary">Rodriguez Andrade</span>
                   </h2>
-                  <p className="mt-1 text-xs md:text-sm text-muted-foreground">20 anos | Pasto, Colombia</p>
+                  <p className="mt-1 text-xs md:text-sm text-white/70">20 años | Pasto, Colombia</p>
                 </div>
               </div>
             </div>
