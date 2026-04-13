@@ -238,9 +238,9 @@ export default function HomePage() {
                   {/* Video - sube tu video a /public/video/personal.mp4 */}
                   <video 
                     ref={videoRef}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                     poster="/images/miFoto.jpg"
-                    onEnded={() => setIsVideoPlaying(false)}
+                    controls
                   >
                     <source src="/video/personal.mp4" type="video/mp4" />
                     Tu navegador no soporta videos.
