@@ -271,7 +271,7 @@ export default function HomePage() {
                 </div>
                 
                 <p className="text-xs text-muted-foreground bg-card/50 rounded-md p-2">
-                  {t("video.title")}: <code className="text-primary"></code>
+                  
                 </p>
               </div>
             </div>
