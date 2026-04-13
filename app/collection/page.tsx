@@ -117,30 +117,33 @@ export default function CollectionPage() {
                   onMouseEnter={() => setHoveredImage(image.id)}
                   onMouseLeave={() => setHoveredImage(null)}
                   onClick={() => setSelectedImage(image)}
-                  className="group relative cursor-pointer"
+                  className="group relative cursor-pointer animate-fade-in-up"
+                  style={{ animationDelay: `${(image.id - 1) * 60}ms` }}
                 >
                   <div 
                     className={cn(
-                      "aspect-square overflow-hidden rounded-lg md:rounded-xl border border-border/50 bg-gradient-to-br transition-all duration-300 backdrop-blur-sm",
+                      "aspect-square overflow-hidden rounded-lg md:rounded-xl border border-border/50 bg-gradient-to-br transition-all duration-300 backdrop-blur-sm relative",
                       image.color,
                       hoveredImage === image.id && "scale-[1.02] md:scale-[1.05] shadow-xl shadow-primary/30 border-primary/50"
                     )}
                   >
                     {image.imageUrl && (
-                    <img
-                      src={image.imageUrl}
-                      alt={t(image.titleKey)}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  )}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl font-bold text-foreground/5">
-                        {String(image.id).padStart(2, "0")}
-                      </span>
-                    </div>
+                      <img
+                        src={image.imageUrl}
+                        alt={t(image.titleKey)}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    )}
+
+                    {/* Difuminado lateral izquierdo */}
+                    <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-black/60 to-transparent pointer-events-none z-10" />
+                    {/* Difuminado lateral derecho */}
+                    <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-black/60 to-transparent pointer-events-none z-10" />
+                    {/* Difuminado inferior siempre visible */}
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent pointer-events-none z-10" />
 
                     {/* Overlay para mobile - siempre visible con info basica */}
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-2 md:hidden">
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-2 md:hidden z-20">
                       <h3 className="text-center font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-wide text-white truncate">
                         {t(image.titleKey)}
                       </h3>
@@ -149,7 +152,7 @@ export default function CollectionPage() {
                     {/* Overlay para desktop - visible en hover */}
                     <div 
                       className={cn(
-                        "absolute inset-0 hidden md:flex flex-col items-center justify-center bg-background/80 backdrop-blur-sm transition-all duration-300",
+                        "absolute inset-0 hidden md:flex flex-col items-center justify-center bg-black/70 backdrop-blur-sm transition-all duration-300 z-20",
                         hoveredImage === image.id ? "opacity-100" : "opacity-0"
                       )}
                     >
@@ -157,10 +160,10 @@ export default function CollectionPage() {
                         <Eye className="h-6 w-6 lg:h-7 lg:w-7 text-primary" />
                       </div>
                       
-                      <h3 className="text-center font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-wide text-foreground px-2">
+                      <h3 className="text-center font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-wide text-white px-2">
                         {t(image.titleKey)}
                       </h3>
-                      <span className="mt-1 text-xs text-muted-foreground">
+                      <span className="mt-1 text-xs text-white/60">
                         {image.category === "Desarrollo" ? t("collection.development") : 
                          image.category === "Diseño" ? t("collection.design") : t("collection.events")}
                       </span>

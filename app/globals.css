@@ -277,6 +277,15 @@
   animation: highlight-blink 1.5s ease-in-out;
 }
 
+@keyframes blur-in {
+  from { filter: blur(8px); opacity: 0; transform: scale(1.03); }
+  to   { filter: blur(0px); opacity: 1; transform: scale(1); }
+}
+
+.animate-blur-in {
+  animation: blur-in 0.8s ease-out forwards;
+}
+
 /* Fondo principal - Vinotinto/Burgundy con gradiente */
 .racing-gradient {
   background: 
