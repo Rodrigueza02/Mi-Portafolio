@@ -263,7 +263,7 @@ export default function HomePage() {
                 </div>
                 
                 <p className="text-xs text-muted-foreground bg-card/50 rounded-md p-2">
-                  {t("video.title")}: <code className="text-primary">Sube tu video a /public/video/personal.mp4</code>
+                  {t("video.title")}: <code className="text-primary"></code>
                 </p>
               </div>
             </div>
@@ -277,7 +277,7 @@ export default function HomePage() {
               {/* Banner principal */}
               <div className="relative lg:col-span-2">
                 <div className="relative h-72 overflow-hidden rounded-xl border border-primary/30 bg-gradient-to-br from-red-600/50 via-red-800/40 to-red-950/60 md:h-80 racing-stripes">
-                  <img src="/images/miFoto.jpg" alt="Mi foto" className="absolute inset-0 h-full w-full object-cover opacity-60" />
+                  <img src="/images/corazon.jpg" alt="Corazon" className="absolute inset-0 h-full w-full object-cover opacity-60" />
                   
                   {/* Overlay con gradiente */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/80" />
