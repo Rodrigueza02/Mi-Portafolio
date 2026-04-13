@@ -77,30 +77,38 @@ export default function HomePage() {
     }
   }
 
-  const submitComment = async () => {
-    if (!comment.trim()) return
-    
-    setCommentStatus("sending")
-    
-    // Simular envio de email (en produccion se conectaria a un servicio de email)
-    try {
-      // Aqui se integraria con un servicio de email como SendGrid, Resend, etc.
-      // Por ahora simulamos el envio
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      setCommentStatus("success")
-      setComment("")
-      
-      // Reset despues de 3 segundos
-      setTimeout(() => {
-        setCommentStatus("idle")
-        setShowCommentBox(false)
-      }, 3000)
-    } catch (error) {
-      console.error("Error enviando comentario:", error)
+ const submitComment = async () => {
+  if (!comment.trim()) return
+
+  setCommentStatus("sending")
+
+  try {
+  
+    const res = await fetch("/api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ comment }),
+    })
+
+    console.log("📡 RESPUESTA:", res)
+
+    if (!res.ok) throw new Error("Error al enviar")
+
+    setCommentStatus("success")
+    setComment("")
+
+    setTimeout(() => {
       setCommentStatus("idle")
-    }
+      setShowCommentBox(false)
+    }, 3000)
+
+  } catch (error) {
+    console.error("❌ ERROR FRONT:", error)
+    setCommentStatus("idle")
   }
+}
 
   const downloadCV = () => {
     // El archivo PDF debe estar en /public/cv/hoja-de-vida.pdf
