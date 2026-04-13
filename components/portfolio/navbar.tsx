@@ -121,9 +121,8 @@ export function Navbar() {
             : "opacity-0 invisible -translate-y-4"
         )}
       >
-        {/* Fondo con blur fuerte y color solido */}
-        <div className="absolute inset-0 bg-background/95 backdrop-blur-xl" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background" />
+        {/* Fondo completamente opaco */}
+        <div className="absolute inset-0 bg-background" />
         
         <div className="relative flex flex-col h-full">
           {/* Links de navegacion mobile */}
@@ -137,7 +136,7 @@ export function Navbar() {
                   "flex items-center gap-3 rounded-xl px-4 py-4 text-lg font-medium uppercase tracking-wide transition-all",
                   pathname === link.href 
                     ? "bg-primary/20 text-primary border border-primary/30 shadow-lg shadow-primary/10" 
-                    : "text-foreground hover:bg-primary/10 hover:text-primary border border-transparent bg-card/30"
+                    : "text-foreground hover:bg-primary/10 hover:text-primary border border-border/30 bg-card/50"
                 )}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
