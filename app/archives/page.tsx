@@ -23,9 +23,9 @@ import { useLanguage } from "@/contexts/language-context"
 const archivos = [
   {
     id: 1,
-    nombre: "Proyecto 01",
-    titulo: "Mentes Creativas - Plataforma Educativa Infantil",
-    descripcion: "Aplicacion web interactiva desarrollada para ninos de cuarto y quinto de primaria, enfocada en el aprendizaje creativo mediante herramientas didacticas.",
+    nombreKey: "projects.project1.name",
+    tituloKey: "projects.project1.title",
+    descripcionKey: "projects.project1.desc",
     tecnologias: ["React", "Vite", "TypeScript", "Tailwind CSS", "Jest"],
     fecha: "2025",
     githubUrl: "https://github.com/HMAlejandra/ProyectoCalidad.git",
@@ -42,9 +42,9 @@ const archivos = [
   },
   {
     id: 2,
-    nombre: "Proyecto 02",
-    titulo: "Sagiria - Reproductor Musical con API de Spotify",
-    descripcion: "Aplicacion web interactiva que funciona como reproductor de musica conectado a la API de Spotify. Permite buscar canciones, reproducir musica en tiempo real y gestionar listas de reproduccion.",
+    nombreKey: "projects.project2.name",
+    tituloKey: "projects.project2.title",
+    descripcionKey: "projects.project2.desc",
     tecnologias: ["HTML", "CSS", "JavaScript", "Python", "Flask", "Spotify API"],
     fecha: "2025",
     githubUrl: "https://github.com/Rodrigueza02/spotify-playlist-app.git",
@@ -60,9 +60,9 @@ const archivos = [
   },
   {
     id: 3,
-    nombre: "Proyecto 03",
-    titulo: "Pagina de Diseno de Interfaces para Aplicaciones Web",
-    descripcion: "Proyecto academico de la UCC que explora los fundamentos del diseno UI/UX para crear experiencias digitales interactivas.",
+    nombreKey: "projects.project3.name",
+    tituloKey: "projects.project3.title",
+    descripcionKey: "projects.project3.desc",
     tecnologias: ["HTML5", "Tailwind CSS", "JavaScript", "Figma"],
     fecha: "2025",
     githubUrl: "https://github.com/DieryValencia/Diseno-de-interfaces-para-aplicaciones-web.git",
@@ -76,6 +76,7 @@ const archivos = [
   },
 ]
 
+
 export default function ArchivesPage() {
   const { t } = useLanguage()
   const [searchQuery, setSearchQuery] = useState("")
@@ -85,13 +86,13 @@ export default function ArchivesPage() {
   const [expandedFiles, setExpandedFiles] = useState<number | null>(null)
   const itemRefs = useRef<{ [key: number]: HTMLDivElement | null }>({})
 
-  const filteredArchivos = archivos.filter(
-    (archivo) =>
-      archivo.nombre.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      archivo.titulo.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      archivo.descripcion.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      archivo.tecnologias.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))
-  )
+const filteredArchivos = archivos.filter(
+  (archivo) =>
+    t(archivo.nombreKey).toLowerCase().includes(searchQuery.toLowerCase()) ||
+    t(archivo.tituloKey).toLowerCase().includes(searchQuery.toLowerCase()) ||
+    t(archivo.descripcionKey).toLowerCase().includes(searchQuery.toLowerCase()) ||
+    archivo.tecnologias.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()))
+)
 
   useEffect(() => {
     if (searchQuery && filteredArchivos.length > 0) {
@@ -186,8 +187,8 @@ export default function ArchivesPage() {
                         )}
                       >
                         <FileCode className="h-3.5 w-3.5 md:h-4 md:w-4 shrink-0" />
-                        <span className="font-medium truncate">{archivo.nombre}</span>
-                        <span className="text-[10px] md:text-xs opacity-60 truncate hidden sm:inline">- {archivo.titulo}</span>
+                        <span className="font-medium truncate">{t(archivo.nombreKey)}</span>
+                        <span className="text-[10px] md:text-xs opacity-60 truncate hidden sm:inline">- {t(archivo.tituloKey)}</span>
                       </button>
                     ))}
                   </div>
@@ -228,16 +229,16 @@ export default function ArchivesPage() {
                           <div className="flex items-center gap-2">
                             <Folder className="h-3.5 w-3.5 md:h-4 md:w-4 text-primary shrink-0" />
                             <span className="font-[family-name:var(--font-display)] text-xs md:text-sm font-semibold uppercase tracking-wide text-primary">
-                              {archivo.nombre}
+                              {t(archivo.nombreKey)}
                             </span>
                           </div>
                           
                           <h3 className="mt-1.5 md:mt-2 font-semibold text-foreground text-sm md:text-base line-clamp-2">
-                            {archivo.titulo}
+                            {t(archivo.tituloKey)}
                           </h3>
                           
                           <p className="mt-1 line-clamp-2 text-xs md:text-sm text-muted-foreground">
-                            {archivo.descripcion}
+                            {t(archivo.descripcionKey)}
                           </p>
 
                           <div className="mt-2 flex flex-wrap items-center gap-2 md:gap-4">
@@ -319,7 +320,7 @@ export default function ArchivesPage() {
                       {selectedArchivo.imagenUrl ? (
                         <img 
                           src={selectedArchivo.imagenUrl} 
-                          alt={selectedArchivo.titulo}
+                          alt={t(selectedArchivo.tituloKey)}
                           className="absolute inset-0 h-full w-full object-contain"
                         />
                       ) : (
@@ -333,10 +334,10 @@ export default function ArchivesPage() {
                     
                     <div className="p-4 md:p-6">
                       <h3 className="font-[family-name:var(--font-display)] text-base md:text-xl font-bold uppercase tracking-wider text-foreground">
-                        {selectedArchivo.titulo}
+                        {t(selectedArchivo.tituloKey)}
                       </h3>
                       <p className="mt-2 md:mt-3 text-xs md:text-sm leading-relaxed text-muted-foreground">
-                        {selectedArchivo.descripcion}
+                        {t(selectedArchivo.descripcionKey)}
                       </p>
                       
                       <div className="mt-3 md:mt-4 flex flex-wrap gap-1.5 md:gap-2">
@@ -345,7 +346,7 @@ export default function ArchivesPage() {
                             key={tech}
                             className="rounded-full bg-primary/20 px-2 md:px-3 py-0.5 md:py-1 text-[10px] md:text-xs font-medium text-primary"
                           >
-                            {tech}
+                            {t(tech)}
                           </span>
                         ))}
                       </div>
