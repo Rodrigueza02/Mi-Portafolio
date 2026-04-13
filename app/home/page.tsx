@@ -37,10 +37,10 @@ const homeContent = [
 
 // Imagenes de momentos
 const momentosImages = [
-  { id: 1, title: "Proyecto 2023", imageUrl: "", color: "from-red-600/40 to-red-900/20" },
-  { id: 2, title: "Hackathon", imageUrl: "", color: "from-red-700/30 to-red-950/20" },
-  { id: 3, title: "Equipo Dev", imageUrl: "", color: "from-red-800/25 to-red-900/30" },
-  { id: 4, title: "Celebracion", imageUrl: "", color: "from-red-600/35 to-red-950/25" },
+  { id: 1, title: "Seminario", imageUrl: "/momentos/seminario.jpg", color: "from-red-600/40 to-red-900/20" },
+  { id: 2, title: "Clases de Programacion", imageUrl: "/momentos/programacion.jpg", color: "from-red-700/30 to-red-950/20" },
+  { id: 3, title: "Compañeros de Estudio", imageUrl: "/momentos/companeros.jpg", color: "from-red-800/25 to-red-900/30" },
+  { id: 4, title: "Capacitación", imageUrl: "/momentos/capacitacion.jpg", color: "from-red-600/35 to-red-950/25" },
 ]
 
 export default function HomePage() {
