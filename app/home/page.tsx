@@ -375,7 +375,7 @@ export default function HomePage() {
                 <div className="flex gap-4">
                   {/* Imagen pequena */}
                   <div className="h-24 w-24 shrink-0 overflow-hidden rounded-xl border-2 border-primary/30 bg-gradient-to-br from-red-600/40 to-red-900/30">
-                    <img src="/images/miFoto.jpg" alt="Perfil" className="h-full w-full object-cover" />
+                    <img src="/images/corazon.jpg" alt="Perfil" className="h-full w-full object-cover" />
                   </div>
                   
                   {/* Texto expandible */}
