@@ -240,9 +240,6 @@ const handleSubmit = async (e: React.FormEvent) => {
                     )}
                   </Button>
                   
-                  <p className="text-center text-[10px] md:text-xs text-muted-foreground">
-                    Los mensajes se envian a: {contactData.email}
-                  </p>
                 </form>
               )}
             </div>
