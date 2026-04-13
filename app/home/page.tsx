@@ -284,7 +284,7 @@ export default function HomePage() {
                   <img src="/images/lot.jpg" alt="fondo" className="absolute inset-0 h-full w-full object-cover opacity-60" />
                   
                   {/* Overlay con gradiente */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/80" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/40" />
                   
                   {/* Contenido del banner */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6">
@@ -293,10 +293,10 @@ export default function HomePage() {
                     <div className="absolute left-0 top-1/2 h-px w-full bg-gradient-to-r from-primary/40 to-transparent animate-speed-lines" style={{ animationDelay: "0.5s" }} />
                     <div className="absolute left-0 top-3/4 h-px w-1/2 bg-gradient-to-r from-primary/20 to-transparent animate-speed-lines" style={{ animationDelay: "1s" }} />
                     
-                    <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold uppercase tracking-wider text-foreground md:text-4xl text-glow">
+                    <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold uppercase tracking-wider text-white md:text-4xl text-glow">
                       {t("passion.title").split(" ").slice(0, 2).join(" ")} <span className="text-primary">{t("passion.title").split(" ").slice(2).join(" ")}</span>
                     </h2>
-                    <p className="mt-2 max-w-md text-muted-foreground">
+                    <p className="mt-2 max-w-md text-white/80">
                       {t("passion.subtitle")}
                     </p>
                     
