@@ -22,21 +22,7 @@ export const metadata: Metadata = {
   description: 'Portafolio personal de Juliana Rodríguez, una desarrolladora de software especializada en React, Vite y Tailwind CSS. Este sitio muestra mis proyectos más destacados, habilidades técnicas y experiencia profesional. Con un diseño moderno y dinámico, mi portafolio refleja mi compromiso con la excelencia y la innovación en el desarrollo web.',
   generator: 'Next.js',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon.svg',
   },
 }
 
