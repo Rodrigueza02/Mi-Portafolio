@@ -384,6 +384,13 @@ export default function HomePage() {
                       {t("presentation.text")}
                     </p>
 
+                    {expandedPresentation && (
+                      <div className="mt-4 space-y-4 animate-fade-in-up text-sm text-muted-foreground">
+                        <p>{t("presentation.adaptText")}</p>
+                        <p>{t("presentation.workText")}</p>
+                      </div>
+
+                    )}
 
                     <Button 
                       variant="link" 
