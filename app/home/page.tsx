@@ -240,24 +240,19 @@ export default function HomePage() {
                 </h3>
                 
                 {/* Contenedor de video */}
-                <div className="relative aspect-video w-full overflow-hidden rounded-xl border-2 border-primary/50 bg-gradient-to-br from-red-900 via-red-800 to-red-950 shadow-lg card-lift group">
+                <div className="relative aspect-video w-full overflow-hidden rounded-xl border-2 border-primary/50 bg-card shadow-lg card-lift group">
                   <video 
                     ref={videoRef}
-                    className="h-full w-full object-contain animate-blur-in"
+                    className="h-full w-full object-contain animate-blur-in photo-blend"
                     poster="/images/corazon.jpg"
                   >
                     <source src="/video/personal.mp4" type="video/mp4" />
                     {t("video.noSupport")}
                   </video>
-
-                  {/* Difuminado lateral izquierdo */}
-                  <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-red-900 via-red-900/60 to-transparent pointer-events-none" />
-                  {/* Difuminado lateral derecho */}
-                  <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-red-900 via-red-900/60 to-transparent pointer-events-none" />
                   
                   {/* Overlay con boton de play */}
                   <div 
-                    className={`absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity cursor-pointer ${isVideoPlaying ? "opacity-0 hover:opacity-100" : "opacity-100"}`}
+                    className={`absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity cursor-pointer z-10 ${isVideoPlaying ? "opacity-0 hover:opacity-100" : "opacity-100"}`}
                     onClick={toggleVideo}
                   >
                     <button 

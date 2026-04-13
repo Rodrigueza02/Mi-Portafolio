@@ -120,22 +120,17 @@ export default function AboutPage() {
           <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
             {/* Lado izquierdo - Imagen personal */}
             <div className="flex flex-col">
-              <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[400px] md:max-h-[500px] w-full overflow-hidden rounded-lg md:rounded-xl border border-border/50 transition-all backdrop-blur-sm">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-red-950">
+              <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[400px] md:max-h-[500px] w-full overflow-hidden rounded-lg md:rounded-xl border border-border/50 transition-all backdrop-blur-sm bg-card">
+                {/* Imagen con máscara de fusión */}
+                <div className="absolute inset-0">
                   <img
                     src="/images/miFoto.jpg"
                     alt="miFoto"
-                    className="w-full h-full object-contain animate-blur-in"
+                    className="w-full h-full object-contain animate-blur-in photo-blend"
                   />
-                  {/* Difuminado lateral izquierdo */}
-                  <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-red-900 via-red-900/70 to-transparent animate-fade-in-up" />
-                  {/* Difuminado lateral derecho */}
-                  <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-red-900 via-red-900/70 to-transparent animate-fade-in-up" />
-                  {/* Difuminado inferior */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 </div>
                 {/* Overlay con nombre */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 md:p-6">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 md:p-6 z-10">
                   <h2 className="font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-wider text-white text-glow">
                     {t("about.name")} <span className="text-primary">{t("about.lastname")}</span>
                   </h2>

@@ -286,6 +286,35 @@
   animation: blur-in 0.8s ease-out forwards;
 }
 
+/* Fusión de imagen/video con el fondo del contenedor */
+/* mask-image hace que los bordes se vuelvan transparentes y se mezclen con el bg */
+.photo-blend {
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 85% at 50% 45%,
+    black 40%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 85% at 50% 45%,
+    black 40%,
+    transparent 100%
+  );
+}
+
+/* En modo claro el fondo del card es más claro, ajustamos la máscara igual */
+.light .photo-blend {
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 85% at 50% 45%,
+    black 40%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 85% at 50% 45%,
+    black 40%,
+    transparent 100%
+  );
+}
+
 /* Fondo principal - Vinotinto/Burgundy con gradiente */
 .racing-gradient {
   background: 
