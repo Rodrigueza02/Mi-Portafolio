@@ -239,7 +239,7 @@ export default function HomePage() {
                   <video 
                     ref={videoRef}
                     className="h-full w-full object-contain"
-                    poster="/images/lot.jpg"
+                    poster="/images/corazon.jpg"
                   >
                     <source src="/video/personal.mp4" type="video/mp4" />
                     Tu navegador no soporta videos.
@@ -277,7 +277,7 @@ export default function HomePage() {
               {/* Banner principal */}
               <div className="relative lg:col-span-2">
                 <div className="relative h-72 overflow-hidden rounded-xl border border-primary/30 bg-gradient-to-br from-red-600/50 via-red-800/40 to-red-950/60 md:h-80 racing-stripes">
-                  <img src="/images/corazon.jpg" alt="Corazon" className="absolute inset-0 h-full w-full object-cover opacity-60" />
+                  <img src="/images/lot.jpg" alt="fondo" className="absolute inset-0 h-full w-full object-cover opacity-60" />
                   
                   {/* Overlay con gradiente */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/80" />
