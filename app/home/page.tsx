@@ -384,34 +384,6 @@ export default function HomePage() {
                       {t("presentation.text")}
                     </p>
 
-                    {expandedPresentation && (
-                      <div className="mt-4 space-y-4 animate-fade-in-up text-sm text-muted-foreground">
-                        <p>{t("presentation.adaptText")}</p>
-                        <p>{t("presentation.workText")}</p>
-
-                        <h3 className="text-primary font-semibold text-base mt-6">
-                          {t("testimonials.title")}
-                        </h3>
-
-                        <div>
-                          <h4 className="text-primary font-medium">Camilo Ojeda</h4>
-                          <span className="text-xs text-muted-foreground">{t("testimonial.client")}</span>
-                          <p className="italic mt-1">{t("testimonial.camilo")}</p>
-                        </div>
-
-                        <div>
-                          <h4 className="text-primary font-medium">Helen Moncayo</h4>
-                          <span className="text-xs text-muted-foreground">{t("testimonial.teammate")}</span>
-                          <p className="italic mt-1">{t("testimonial.helen")}</p>
-                        </div>
-
-                        <div>
-                          <h4 className="text-primary font-medium">Daniel Arteaga</h4>
-                          <span className="text-xs text-muted-foreground">{t("testimonial.colleague")}</span>
-                          <p className="italic mt-1">{t("testimonial.daniel")}</p>
-                        </div>
-                      </div>
-                    )}
 
                     <Button 
                       variant="link" 
@@ -423,37 +395,7 @@ export default function HomePage() {
                     </Button>
                   </div>
                 </div>
-
-                {/* Boton de contacto con modal */}
-                <Button 
-                  onClick={() => setShowContact(!showContact)}
-                  className="mt-4 w-full gradient-red uppercase tracking-wider btn-racing"
-                >
-                  {showContact ? t("btn.close") + " " + t("btn.contact") : t("btn.contact")}
-                </Button>
-
-                {/* Modal de contacto */}
-                {showContact && (
-                  <div className="animate-fade-in-up rounded-xl border border-primary/30 bg-card/90 p-5 backdrop-blur">
-                    <h4 className="font-[family-name:var(--font-display)] text-lg font-semibold uppercase tracking-wide text-primary mb-4">
-                      {t("contact.myData")}
-                    </h4>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3 text-foreground">
-                        <Mail className="h-5 w-5 text-primary" />
-                        <span>mariaj.rodrigueza@campusucc.edu.co</span>
-                      </div>
-                      <div className="flex items-center gap-3 text-foreground">
-                        <Phone className="h-5 w-5 text-primary" />
-                        <span>+57 3162837593</span>
-                      </div>
-                      <div className="flex items-center gap-3 text-foreground">
-                        <MapPin className="h-5 w-5 text-primary" />
-                        <span>San Juan de Pasto, Colombia</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
+            
               </div>
             </div>
           </div>
