@@ -130,7 +130,7 @@ export default function AboutPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 </div>
                 {/* Overlay con nombre */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/80 to-transparent p-4 md:p-6">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 md:p-6">
                   <h2 className="font-[family-name:var(--font-display)] text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-wider text-white text-glow">
                     Maria Juliana <span className="text-primary">Rodriguez Andrade</span>
                   </h2>

@@ -140,8 +140,8 @@ export default function CollectionPage() {
                     </div>
 
                     {/* Overlay para mobile - siempre visible con info basica */}
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/90 to-transparent p-2 md:hidden">
-                      <h3 className="text-center font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-wide text-foreground truncate">
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-2 md:hidden">
+                      <h3 className="text-center font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-wide text-white truncate">
                         {image.title}
                       </h3>
                     </div>

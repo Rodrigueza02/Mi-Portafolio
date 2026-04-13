@@ -436,8 +436,8 @@ export default function HomePage() {
                       </div>
                     </div>
                   )}
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-background/90 via-background/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100">
-                    <span className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-wide text-foreground">
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100">
+                    <span className="font-[family-name:var(--font-display)] text-sm font-semibold uppercase tracking-wide text-white">
                       {img.title}
                     </span>
                   </div>
