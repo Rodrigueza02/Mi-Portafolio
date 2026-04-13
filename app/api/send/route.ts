@@ -6,19 +6,23 @@ export async function POST(req: Request) {
   console.log("🔥 API SEND EJECUTADA")
 
   try {
-    const { comment } = await req.json()
+    const { name, email, message, comment } = await req.json()
 
-    console.log("📩 Comentario recibido:", comment)
+    console.log("📩 Datos recibidos:", { name, email, message, comment })
     console.log("🔑 API KEY:", process.env.RESEND_API_KEY)
 
     const response = await resend.emails.send({
-      from: 'Portfolio <onboarding@resend.dev>',
+      from: 'onboarding@resend.dev',
       to: 'julirodriguezandrade@gmail.com',
       subject: 'Nuevo comentario en tu portafolio',
-      html: `
-        <h2>Nuevo comentario</h2>
-        <p>${comment}</p>
-      `
+        html: `
+        <h2>Nuevo mensaje desde tu portafolio</h2>
+
+        ${name ? `<p><strong>Nombre:</strong> ${name}</p>` : ""}
+        ${email ? `<p><strong>Email:</strong> ${email}</p>` : ""}
+        ${message ? `<p><strong>Mensaje:</strong> ${message}</p>` : ""}
+        ${comment ? `<p><strong>Comentario:</strong> ${comment}</p>` : ""}
+        `
     })
 
     console.log("✅ Respuesta de Resend:", response)

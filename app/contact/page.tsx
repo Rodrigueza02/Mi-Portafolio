@@ -27,20 +27,40 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [status, setStatus] = useState<"idle" | "sending" | "success">("idle")
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!formData.name || !formData.email || !formData.message) return
-    
-    setStatus("sending")
-    
-    // Simular envio
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+
+  if (!formData.name || !formData.email || !formData.message) return
+
+  setStatus("sending")
+
+  try {
+    const res = await fetch("/api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      }),
+    })
+
+    console.log("📡 RESPUESTA:", res)
+
+    if (!res.ok) throw new Error("Error al enviar")
+
     setStatus("success")
     setFormData({ name: "", email: "", message: "" })
-    
+
     setTimeout(() => setStatus("idle"), 4000)
+
+  } catch (error) {
+    console.error("❌ ERROR FRONT:", error)
+    setStatus("idle")
   }
+}
 
   return (
     <div className="flex min-h-screen flex-col racing-gradient smoke-overlay speed-stripes-overlay vignette relative overflow-hidden pt-14 md:pt-16">
