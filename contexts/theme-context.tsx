@@ -38,16 +38,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
   }, [theme, mounted])
 
-  const handleSetTheme = (newTheme: Theme) => {
-    setTheme(newTheme)
-  }
-
   const toggleTheme = () => {
     setTheme(prev => prev === "dark" ? "light" : "dark")
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme: handleSetTheme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   )

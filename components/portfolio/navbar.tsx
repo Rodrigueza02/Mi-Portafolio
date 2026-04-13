@@ -8,19 +8,19 @@ import { cn } from "@/lib/utils"
 import { useLanguage } from "@/contexts/language-context"
 import { useTheme } from "@/contexts/theme-context"
 
+const NAV_LINKS = [
+  { href: "/home", labelKey: "nav.home" },
+  { href: "/about", labelKey: "nav.about" },
+  { href: "/archives", labelKey: "nav.projects" },
+  { href: "/collection", labelKey: "nav.collection" },
+  { href: "/contact", labelKey: "nav.contact" },
+]
+
 export function Navbar() {
   const pathname = usePathname()
   const { language, setLanguage, t } = useLanguage()
   const { theme, toggleTheme } = useTheme()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const navLinks = [
-    { href: "/home", labelKey: "nav.home" },
-    { href: "/about", labelKey: "nav.about" },
-    { href: "/archives", labelKey: "nav.projects" },
-    { href: "/collection", labelKey: "nav.collection" },
-    { href: "/contact", labelKey: "nav.contact" },
-  ]
 
   const toggleLanguage = () => {
     setLanguage(language === "es" ? "en" : "es")
@@ -56,7 +56,7 @@ export function Navbar() {
 
         {/* Links de navegacion - Desktop */}
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -127,7 +127,7 @@ export function Navbar() {
         <div className="relative flex flex-col h-full">
           {/* Links de navegacion mobile */}
           <nav className="flex flex-col px-6 py-6 gap-2">
-            {navLinks.map((link, index) => (
+            {NAV_LINKS.map((link, index) => (
               <Link
                 key={link.href}
                 href={link.href}

@@ -48,8 +48,6 @@ const handleSubmit = async (e: React.FormEvent) => {
       }),
     })
 
-    console.log("RESPUESTA:", res)
-
     if (!res.ok) throw new Error("Error al enviar")
 
     setStatus("success")

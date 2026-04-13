@@ -92,8 +92,6 @@ export default function HomePage() {
       body: JSON.stringify({ comment }),
     })
 
-    console.log("📡 RESPUESTA:", res)
-
     if (!res.ok) throw new Error("Error al enviar")
 
     setCommentStatus("success")
@@ -362,7 +360,7 @@ export default function HomePage() {
                     )}
                     
                     <p className="mt-3 text-xs text-muted-foreground">
-                      Los comentarios
+                      {t("comments.placeholder")}
                     </p>
                   </div>
                 )}

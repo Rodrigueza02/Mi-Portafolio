@@ -1,14 +1,15 @@
 import { Resend } from 'resend'
 
 export async function POST(req: Request) {
-  console.log("🔥 API SEND EJECUTADA")
+  console.log("🔥 API SEND ejecutada")
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
     const { name, email, message, comment } = await req.json()
 
-    console.log("📩 Datos recibidos:", { name, email, message, comment })
-    console.log("🔑 API KEY:", process.env.RESEND_API_KEY)
+    if (process.env.NODE_ENV !== "production") {
+      console.log("📩 Datos recibidos:", { name, email, message, comment })
+    }
 
     const response = await resend.emails.send({
       from: 'onboarding@resend.dev',
@@ -24,7 +25,7 @@ export async function POST(req: Request) {
         `
     })
 
-    console.log("✅ Respuesta de Resend:", response)
+  console.log("✅ Email enviado")
 
     return Response.json({ success: true })
 
