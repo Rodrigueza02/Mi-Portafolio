@@ -220,7 +220,7 @@ export default function CollectionPage() {
           >
 <div 
   className={cn(
-    "relative aspect-[4/3] md:aspect-video w-full overflow-hidden rounded-xl md:rounded-2xl border border-border/50 bg-gradient-to-br shadow-2xl racing-stripes",
+    "relative w-full max-h-[80vh] flex items-center justify-center overflow-hidden rounded-xl md:rounded-2xl border border-border/50 bg-gradient-to-br shadow-2xl",
     selectedImage.color
   )}
 >
@@ -229,7 +229,7 @@ export default function CollectionPage() {
     <img
       src={selectedImage.imageUrl}
       alt={selectedImage.title}
-      className="absolute inset-0 w-full h-full object-cover"
+      className="max-w-full max-h-[80vh] object-contain"
     />
   )}
 
