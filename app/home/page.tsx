@@ -239,7 +239,7 @@ export default function HomePage() {
                   <video 
                     ref={videoRef}
                     className="h-full w-full object-contain"
-                    poster="/images/corazon.jpg"
+                    poster="/images/lot.jpg"
                   >
                     <source src="/video/personal.mp4" type="video/mp4" />
                     Tu navegador no soporta videos.
