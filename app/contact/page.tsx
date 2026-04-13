@@ -6,25 +6,26 @@ import { Navbar } from "@/components/portfolio/navbar"
 import { Footer } from "@/components/portfolio/footer"
 import { useLanguage } from "@/contexts/language-context"
 import { useState } from "react"
+import { SiX } from "react-icons/si"
 
 // Datos de contacto - CONFIGURA TUS DATOS AQUI
 const contactData = {
-  email: "mariaj.rodrigueza@campusucc.edu.co",
-  emailSecondary: "julirodriguezandrade@gmail.com",
+  email: "julirodriguezandrade@gmail.com",
+  emailSecondary: "mariaj.rodrigueza@campusucc.edu.co",
   phone: "+57 316 283 7593",
   phoneSecondary: "+57 300 000 0000",
   location: "San Juan de Pasto, Narino, Colombia",
   socialMedia: [
     { name: "GitHub", icon: Github, url: "https://github.com/Rodrigueza02", username: "@Rodrigueza02" },
-    { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com/in/tu-perfil", username: "Juliana Rodriguez" },
-    { name: "Twitter", icon: Twitter, url: "https://twitter.com/tu-perfil", username: "@tuusuario" },
-    { name: "Instagram", icon: Instagram, url: "https://instagram.com/tu-perfil", username: "@tuusuario" },
+    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/juliana-rodriguez-3514282b1/", username: "Juliana Rodriguez" },
+    { name: "X", icon: SiX, url: "https://x.com/Juliana67598650", username: "@Juliana67598650" },
+    { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/juliguez.02?igsh=MWN5ZWMwazdrOXI0MQ==", username: "@juliguez.02" },
   ]
 }
 
 export default function ContactPage() {
   const { t } = useLanguage()
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  const [formData, setFormData] = useState({ name: "", email: "", message: "", comment: "" })
   const [status, setStatus] = useState<"idle" | "sending" | "success">("idle")
 
 const handleSubmit = async (e: React.FormEvent) => {
@@ -47,17 +48,17 @@ const handleSubmit = async (e: React.FormEvent) => {
       }),
     })
 
-    console.log("📡 RESPUESTA:", res)
+    console.log("RESPUESTA:", res)
 
     if (!res.ok) throw new Error("Error al enviar")
 
     setStatus("success")
-    setFormData({ name: "", email: "", message: "" })
+    setFormData({ name: "", email: "", message: "", comment: "" })
 
     setTimeout(() => setStatus("idle"), 4000)
 
   } catch (error) {
-    console.error("❌ ERROR FRONT:", error)
+    console.error("ERROR FRONT:", error)
     setStatus("idle")
   }
 }
@@ -240,7 +241,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </Button>
                   
                   <p className="text-center text-[10px] md:text-xs text-muted-foreground">
-                    Los mensajes se envian a: {contactData.emailSecondary}
+                    Los mensajes se envian a: {contactData.email}
                   </p>
                 </form>
               )}

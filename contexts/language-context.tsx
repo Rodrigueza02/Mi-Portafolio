@@ -164,7 +164,7 @@ export const translations: Translations = {
   
   // Footer
   "footer.rights": { es: "Todos los derechos reservados", en: "All rights reserved" },
-  "footer.tagline": { es: "Velocidad • Pasión • Excelencia", en: "Speed • Passion • Excellence" },
+  "footer.tagline": { es: "Desarrollo • Pasión • Excelencia", en: "Development • Passion • Excellence" },
   
   // Programación passion
   "passion.title": { es: "La Programación es mi Pasión", en: "Programming is my Passion" },
