@@ -169,7 +169,26 @@ export const translations: Translations = {
   // Programación passion
   "passion.title": { es: "La Programación es mi Pasión", en: "Programming is my Passion" },
   "passion.subtitle": { es: "Donde otros ven límites, yo veo oportunidades para innovar y crear experiencias únicas.", en: "Where others see limits, I see opportunities to innovate and create unique experiences." },
+
+  // Proyectos (DETALLADO)
+"projects.project1.name": { es: "Proyecto 01", en: "Project 01" },
+"projects.project1.title": { es: "Mentes Creativas - Plataforma Educativa Infantil", en: "Creative Minds - Children's Educational Platform" },
+"projects.project1.desc": { es: "Aplicacion web interactiva desarrollada para ninos de cuarto y quinto de primaria, enfocada en el aprendizaje creativo mediante herramientas didacticas.", en: "Interactive web application developed for 4th and 5th grade children, focused on creative learning through educational tools." },
+
+"projects.project2.name": { es: "Proyecto 02", en: "Project 02" },
+"projects.project2.title": { es: "Sagiria - Reproductor Musical con API de Spotify", en: "Sagiria - Music Player with Spotify API" },
+"projects.project2.desc": { es: "Aplicacion web interactiva que funciona como reproductor de musica conectado a la API de Spotify.", en: "Interactive web application that works as a music player connected to the Spotify API." },
+
+"projects.project3.name": { es: "Proyecto 03", en: "Project 03" },
+"projects.project3.title": { es: "Pagina de Diseno de Interfaces para Aplicaciones Web", en: "Web Interface Design Page" },
+"projects.project3.desc": { es: "Proyecto academico que explora los fundamentos del diseno UI/UX.", en: "Academic project that explores UI/UX design fundamentals." },
+
+"projects.select": { es: "Selecciona un proyecto", en: "Select a project" },
+"projects.github": { es: "Ver en GitHub", en: "View on GitHub" },
+
 }
+
+
 
 interface LanguageContextType {
   language: Language
